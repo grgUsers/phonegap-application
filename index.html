@@ -1,12 +1,32 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
 <title>Untitled Document</title>
+<script src="js/jquery.js"></script>
+<script src="js/script.js"></script>
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<h1>Foo bar</h1>
+<div id="wrapper">
+	<div id="other-wrapper">
+        <div class="top-text">
+            <p>Whats that? Forgotten how birthdays work again?</p>
+            <p>Dont worry, it happens to everybody. Use this handy app to find out if its your birthday today or not.</p>
+            <p>Simply enter your date of birth, click submit and cross your fingers.</p>
+        </div>
+        <div class="form">
+            <form onsubmit="javscript:return Validate(this);">
+                <input type="text" name="text1" placeholder="Day" /><br />
+                <input type="text" name="text2" placeholder="Month" /><br />
+                <input type="text" placeholder="Year" /><br /><br />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div><!-- end wrapper -->
+
 </body>
 </html>
