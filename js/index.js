@@ -38,7 +38,8 @@ function deviceReady() {
 	});
 	
 	function loginAjax(u,p) {
-		$.mobile.changePage( "#loading", { transition: "flip"} );
+		$.mobile.changePage( $("#loading"), "flip", true, true );
+		
 		$.ajax({ 
 			 type: 'POST', 
 			 url: 'http://blog.grassrootsgroup.com/phonegap/service.php', 
