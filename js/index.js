@@ -1,7 +1,4 @@
-function init() {
-document.addEventListener("deviceready", deviceReady, true);
-delete init;
-}
+document.addEventListener("deviceready", deviceReady, false);
 
 function deviceReady() {
 
