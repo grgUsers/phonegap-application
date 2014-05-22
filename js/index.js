@@ -28,17 +28,17 @@ function deviceReady() {
 						window.location = "member.html";
 					} 
 					else {
-						navigator.notification.alert("Your login failed", function(){});
+						alert("Your login failed");
 						//window.location("main.html");
 					}
 				 },
 				 error: function(error){
 					 //alert(response.success);
-					navigator.notification.alert('Could not connect to the database' + error, function(){});
+					alert('Could not connect to the database' + error);
 				}
 			}); 
 		} else {
-			navigator.notification.alert("You haven't entered anything", function() {});
+			alert("You haven't entered anything");
 		}
 		
 		return false;
