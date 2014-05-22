@@ -17,7 +17,6 @@ function deviceReady() {
 
 	$("#loginForm").on("submit",function(e) {
 		//disable the button so we can't resubmit while we wait
-		$("#submitButton",this).attr("disabled","disabled");
 		var u = $("#username", this).val();
 		var p = $("#password", this).val();
 		
