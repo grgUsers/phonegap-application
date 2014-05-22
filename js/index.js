@@ -22,40 +22,50 @@ function deviceReady() {
 		var p = $("#password", this).val();
 		
 		if(checkConnection != "no connection" || checkConnection != "2g") {
-			if(u != '' && p!= '') {
-				$.ajax({ 
-					 type: 'POST', 
-					 url: 'http://blog.grassrootsgroup.com/phonegap/service.php', 
-					 crossDomain: true,
-					 data:  {username: u, password: p},
-					 dataType: 'json', 
-					 async: false,
-		
-					 success: function (response){ 
-						if (response.success) { 
-							window.localStorage["username"] = e;
-							window.localStorage["password"] = p; 
-							//window.localStorage["UID"] = data.uid;           
-							window.location = "member.html";
-						} 
-						else {
-							alert("Your login failed");
-							//window.location("main.html");
-						}
-					 },
-					 error: function(error){
-						 //alert(response.success);
-						alert('Could not connect to the database' + error);
-					}
-				}); 
+			var uLs = window.localStorage.getItem("username"),
+				pLs = window.localStorage.getItem("password");
+				
+			if(uLs && pLs) {
+				loginAjax(uLs,pLs);
+			} else if(u != '' && p!= '') {
+				loginAjax(u,p);
 			} else {
 				alert("You haven't entered anything");
 			}
 		} else {
-			alert('an internet connection cannot be found');
+			alert('an internet connection cannot be found, or your connection is too weak');
 		}
 		return false;
 	});
+	
+	function loginAjax(u,p) {
+		$.mobile.changePage( "#loading", { transition: "flip"} );
+		$.ajax({ 
+			 type: 'POST', 
+			 url: 'http://blog.grassrootsgroup.com/phonegap/service.php', 
+			 crossDomain: true,
+			 data:  {username: u, password: p},
+			 dataType: 'json', 
+			 async: false,
+	
+			 success: function (response){ 
+				if (response.success) { 
+					window.localStorage["username"] = u;
+					window.localStorage["password"] = p; 
+					//window.localStorage["UID"] = data.uid;           
+					window.location = "member.html";
+				} 
+				else {
+					alert("Your login failed");
+					//window.location("main.html");
+				}
+			 },
+			 error: function(error){
+				 //alert(response.success);
+				alert('Could not connect to the database' + error);
+			}
+		}); 
+	}
 
 }
 
