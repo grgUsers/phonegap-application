@@ -1,6 +1,19 @@
 document.addEventListener("deviceready", deviceReady, false);
 
 function deviceReady() {
+	
+	function checkConnection() {
+		var networkState = navigator.network.connection.type;
+	
+		var states = {};
+		states[Connection.UNKNOWN]  = 'unknown';
+		states[Connection.ETHERNET] = 'Ether';
+		states[Connection.WIFI]     = 'wifi';
+		states[Connection.CELL_2G]  = '2g';
+		states[Connection.CELL_3G]  = '3g';
+		states[Connection.CELL_4G]  = '4g';
+		states[Connection.NONE]     = 'no connection';
+	}
 
 	$("#loginForm").on("submit",function(e) {
 		//disable the button so we can't resubmit while we wait
@@ -8,36 +21,39 @@ function deviceReady() {
 		var u = $("#username", this).val();
 		var p = $("#password", this).val();
 		
-		if(u != '' && p!= '') {
-			$.ajax({ 
-				 type: 'POST', 
-				 url: 'http://blog.grassrootsgroup.com/phonegap/service.php', 
-				 crossDomain: true,
-				 data:  {username: u, password: p},
-				 dataType: 'json', 
-				 async: false,
-	
-				 success: function (response){ 
-					if (response.success) { 
-						window.localStorage["username"] = e;
-						window.localStorage["password"] = p; 
-						//window.localStorage["UID"] = data.uid;           
-						window.location = "member.html";
-					} 
-					else {
-						alert("Your login failed");
-						//window.location("main.html");
-					}
-				 },
-				 error: function(error){
-					 //alert(response.success);
-					alert('Could not connect to the database' + error);
-				}
-			}); 
-		} else {
-			alert("You haven't entered anything");
-		}
+		if(checkConnection != "no connection" || checkConnection != "2g") {
+			if(u != '' && p!= '') {
+				$.ajax({ 
+					 type: 'POST', 
+					 url: 'http://blog.grassrootsgroup.com/phonegap/service.php', 
+					 crossDomain: true,
+					 data:  {username: u, password: p},
+					 dataType: 'json', 
+					 async: false,
 		
+					 success: function (response){ 
+						if (response.success) { 
+							window.localStorage["username"] = e;
+							window.localStorage["password"] = p; 
+							//window.localStorage["UID"] = data.uid;           
+							window.location = "member.html";
+						} 
+						else {
+							alert("Your login failed");
+							//window.location("main.html");
+						}
+					 },
+					 error: function(error){
+						 //alert(response.success);
+						alert('Could not connect to the database' + error);
+					}
+				}); 
+			} else {
+				alert("You haven't entered anything");
+			}
+		} else {
+			alert('an internet connection cannot be found');
+		}
 		return false;
 	});
 

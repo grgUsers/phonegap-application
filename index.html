@@ -28,7 +28,7 @@
                     <input type="password" name="password" id="password" value="" placeholder="Insert Password" />
                 </div>
                 
-                <input type="submit" value="Login" id="submitButton">
+                <input type="submit" value="Login" id="submitButton" data-transition="flip" href="#loading">
                 
                 </form>
             </div>
@@ -37,6 +37,21 @@
             	<h1>Footer Text</h1>
             </div>
         
+        </div>
+        
+        <div data-role="page" id="loading">
+            <div data-role="header">
+                <h1>Welcome To My Homepage</h1>
+            </div>
+            
+            <div data-role="main" class="ui-content">
+       	    <img src="img/loading.gif" width="512" height="512">
+            <p class="blink">Logging in... Please wait</p>
+            </div>
+            
+            <div data-role="footer">
+            	<h1>Footer Text</h1>
+            </div>
         </div>
         
         <!-- javascript files -->
