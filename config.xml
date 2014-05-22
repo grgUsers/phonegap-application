@@ -6,13 +6,13 @@
         id        = "com.phonegap.hello-world"
         version   = "1.0.0">
 
-    <name>Infant & Toddler</name>
+    <name>Infant and Toddler</name>
 
     <description>
-        Count yourchilds daily food intake, quickly and effectivly making sure they get there 5 a day
+        Count yourchilds daily food intake quickly and effectivly making sure they get there 5 a day
     </description>
 
-    <author href="http://www.grassrootsgroup.com/" email="bradley.horner@grg.com">
+    <author href="http://www.grassrootsgroup.com" email="bradley.horner@grg.com">
         Grass Roots Group Plc
     </author>
 
