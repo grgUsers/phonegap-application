@@ -1,5 +1,9 @@
 <?php
-	$data = $_REQUEST['data'];
+	$username = $_REQUEST['username'];
+	$password = $_REQUEST['password'];
 	
-	json_decode($data);
+	if($username == "admin" && $password == "starwars")
+		return true;
+	else
+		return false;
 ?>
