@@ -1,6 +1,7 @@
 document.addEventListener("deviceready", deviceReady, true);
 
 function checkPreAuth() {
+	console.log("checking pre-auth")
     var form = $("#loginForm");
     if(window.localStorage["username"] != undefined && window.localStorage["password"] != undefined) {
         $("#username", form).val(window.localStorage["username"]);
@@ -37,5 +38,6 @@ function handleLogin() {
 }
 
 function deviceReady() {  
+console.log("device ready")
 	$("#loginForm #submitButton").click(function() { handleLogin(); });
 }
