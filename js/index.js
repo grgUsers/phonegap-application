@@ -17,9 +17,9 @@ function handleLogin() {
     //$("#submitButton",form).attr("disabled","disabled");
     var u = $("#loginForm #username").val();
     var p = $("#loginForm #password").val();
-
+	console.log("username: "+u+" Password: "+p)
     if(u != '' && p!= '') {
-        $.post("http://blog.grassrootsgroup.com/phonegap/service.php", {username:u,password:p}, function(res) {
+        $.ajax("http://blog.grassrootsgroup.com/phonegap/service.php", {username:u,password:p}, function(res) {
             if(res == "true") {
                 //store
                 window.localStorage["username"] = u;
