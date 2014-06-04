@@ -1,7 +1,6 @@
 document.addEventListener("deviceready", deviceReady, true);
 
 function checkPreAuth() {
-	console.log("checking pre-auth")
     var form = $("#loginForm");
     if(window.localStorage["username"] != undefined && window.localStorage["password"] != undefined) {
         $("#username", form).val(window.localStorage["username"]);
@@ -10,14 +9,11 @@ function checkPreAuth() {
     }
 }
 
-function handleLogin() {
-	console.log("enter login handler")
+function handleLogin(u, p) {
     var form = $("#loginForm");    
     //disable the button so we can't resubmit while we wait
     //$("#submitButton",form).attr("disabled","disabled");
-    var u = $("#loginForm #username").val();
-    var p = $("#loginForm #password").val();
-	console.log("username: "+u+" Password: "+p)
+
     if(u != '' && p!= '') {
 		$.ajax({
 		  type: "POST",
@@ -26,7 +22,6 @@ function handleLogin() {
 		  async: false,
 		  data: { username: u ,password: p },
 		  success: function (data) { 
-		  		console.log("returned content "+JSON.parse(data))
 				if(JSON.parse(data) == true) {
 					//store
 					window.localStorage["username"] = u;
@@ -45,6 +40,15 @@ function handleLogin() {
 }
 
 function deviceReady() {  
-console.log("device ready")
-	$("#loginForm #submitButton").click(function() { handleLogin(); });
+	$("#loginForm #submitButton").click(function() { 
+	if(localStorage.getItem('username') && localStorage.getItem('password')) {
+		var u = localStorage.getItem('username');
+		var p = localStorage.getItem('password');
+		handleLogin(u,p);
+	} else {
+		var u = $("#loginForm #username").val();
+		var p = $("#loginForm #password").val();
+		handleLogin(u,p); 
+	}
+});
 }
