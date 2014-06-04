@@ -22,7 +22,7 @@ function handleLogin() {
 		$.ajax({
 		  type: "POST",
 		  url: "http://blog.grassrootsgroup.com/phonegap/service.php",
-		  dataType: "text",
+		  dataType: "json",
 		  data: { username: u ,password: p }
 		}).done(function( data ) {
 			console.log("returned data: "+data)
