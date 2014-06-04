@@ -10,6 +10,7 @@ function checkPreAuth() {
 }
 
 function handleLogin() {
+	console.log("enter login handler")
     var form = $("#loginForm");    
     //disable the button so we can't resubmit while we wait
     //$("#submitButton",form).attr("disabled","disabled");
