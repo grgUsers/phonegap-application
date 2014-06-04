@@ -46,11 +46,7 @@ function deviceReady() {
 					alert("Your login failed");
 					//window.location("main.html");
 				}
-			 },
-			 error: function(error){
-				 //alert(response.success);
-				alert('Could not connect to the database' + JSON.stringify(error));
-			}
+			 }
 		}); 
 	}
 	
