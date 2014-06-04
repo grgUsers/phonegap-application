@@ -19,17 +19,21 @@ function handleLogin() {
     var p = $("#loginForm #password").val();
 	console.log("username: "+u+" Password: "+p)
     if(u != '' && p!= '') {
-        $.ajax("http://blog.grassrootsgroup.com/phonegap/service.php", {username:u,password:p}, function(res) {
-            if(res == "true") {
-                //store
-                window.localStorage["username"] = u;
-                window.localStorage["password"] = p;             
-                $.mobile.changePage("member.html");
-            } else {
-                navigator.notification.alert("Your login failed", function() {});
-            }
-         //$("#submitButton").removeAttr("disabled");
-        },"json");
+		$.ajax({
+		  type: "POST",
+		  url: "http://blog.grassrootsgroup.com/phonegap/service.php",
+		  data: { username: u ,password: p }
+		}, "text").done(function( data ) {
+			console.log(data)
+			if(data == "true") {
+				//store
+				window.localStorage["username"] = u;
+				window.localStorage["password"] = p;             
+				$.mobile.changePage("member.html");
+			} else {
+				navigator.notification.alert("Your login failed", function() {});
+			}
+	  	});
     } else {
         navigator.notification.alert("You must enter a username and password", function() {});
         //$("#submitButton").removeAttr("disabled");
