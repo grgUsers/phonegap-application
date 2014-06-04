@@ -26,11 +26,8 @@ function handleLogin() {
 		  async: false,
 		  data: { username: u ,password: p },
 		  success: function (data) { 
-				$.each(data, function(index, element) {
-					console.log("returned data" + JSON.stringify(element))
-				});
 				
-				if(data == "true") {
+				if(JSON.stringify(data) == "true") {
 					//store
 					window.localStorage["username"] = u;
 					window.localStorage["password"] = p;             
