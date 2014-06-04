@@ -32,7 +32,7 @@ function deviceReady() {
 			 url: 'http://blog.grassrootsgroup.com/phonegap/service.php', 
 			 crossDomain: false,
 			 data:  {username: u, password: p},
-			 dataType: 'json', 
+			 dataType: 'jsonp', 
 			 async: false,
 	
 			 success: function (response){ 
