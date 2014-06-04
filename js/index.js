@@ -26,7 +26,7 @@ function handleLogin() {
             } else {
                 navigator.notification.alert("Your login failed", function() {});
             }
-         $("#submitButton").removeAttr("disabled");
+         //$("#submitButton").removeAttr("disabled");
         },"json");
     } else {
         navigator.notification.alert("You must enter a username and password", function() {});
