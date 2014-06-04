@@ -22,10 +22,11 @@ function handleLogin() {
 		$.ajax({
 		  type: "POST",
 		  url: "http://blog.grassrootsgroup.com/phonegap/service.php",
-		  dataType: "json",
+		  dataType: 'json',
+		  async: false,
 		  data: { username: u ,password: p }
 		}).done(function( data ) {
-			console.log("returned data: "+data)
+			console.log("returned data: " + data)
 			if(data == "true") {
 				//store
 				window.localStorage["username"] = u;
