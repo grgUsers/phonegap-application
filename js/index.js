@@ -27,7 +27,7 @@ function handleLogin() {
 		  data: { username: u ,password: p },
 		  success: function (data) { 
 				$.each(data, function(index, element) {
-					console.log("returned data" + element)
+					console.log("returned data" + JSON.stringify(element))
 				});
 				
 				if(data == "true") {
