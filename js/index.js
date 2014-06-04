@@ -39,5 +39,5 @@ function handleLogin() {
 }
 
 function deviceReady() {  
-	$("#loginForm").on("submit",handleLogin);
+	$("#loginForm #submitButton").click(function() { handleLogin(); });
 }
