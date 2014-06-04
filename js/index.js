@@ -1,58 +1,43 @@
-document.addEventListener("deviceready", deviceReady, false);
+function init() {
+	document.addEventListener("deviceready", deviceReady, true);
+	delete init;
+}
 
-function deviceReady() {
-//start of ready
-		
-	$("#loginForm #submitButton").click(function() {
-		if($("#loginForm #username").val() != "" && $("#loginForm #password").val() != "") {	
-			if(navigator.network.connection.type != Connection.NONE) {
-				//check local storgae for login
-				var uLs = window.localStorage.getItem("username"),
-					pLs = window.localStorage.getItem("password")
-					user = $("#loginForm #username").val(),
-					pass = $("#loginForm #password").val();
-					
-				if(uLs && pLs != "" || !$(uls, pLs).empty()) {
-					loginAjax(uLs,pLs);
-				} else {
-					//get values form the form
-					loginAjax(user,pass);
-				}
-			} else {
-				//check local storage for login
-			}
-		} else {
-			alert("no login details have been entered")
-		}
-	});
-		
-	function loginAjax(u,p) {
-		$.ajax({ 
-			 type: 'POST', 
-			 url: 'http://blog.grassrootsgroup.com/phonegap/service.php', 
-			 crossDomain: false,
-			 data:  {username: u, password: p},
-			 dataType: 'jsonp', 
-			 async: false,
-	
-			 success: function (response){ 
-				if (response.success == "true") { 
-					window.localStorage["username"] = u;
-					window.localStorage["password"] = p; 
-					//window.localStorage["UID"] = data.uid;           
-					window.location = "member.html";
-				} 
-				else {
-					alert("Your login failed");
-					//window.location("main.html");
-				}
-			 },
-			 error: function(error){
-				 //alert(response.success);
-				alert('Could not connect to the database' + JSON.stringify(error));
-			}
-		}); 
-	}
-	
-//end of ready
+function checkPreAuth() {
+    var form = $("#loginForm");
+    if(window.localStorage["username"] != undefined && window.localStorage["password"] != undefined) {
+        $("#username", form).val(window.localStorage["username"]);
+        $("#password", form).val(window.localStorage["password"]);
+        handleLogin();
+    }
+}
+
+function handleLogin() {
+    var form = $("#loginForm");    
+    //disable the button so we can't resubmit while we wait
+    $("#submitButton",form).attr("disabled","disabled");
+    var u = $("#username", form).val();
+    var p = $("#password", form).val();
+    console.log("click");
+    if(u != '' && p!= '') {
+        $.post("http://blog.grassrootsgroup.com/phonegap/service.php", {username:u,password:p}, function(res) {
+            if(res == true) {
+                //store
+                window.localStorage["username"] = u;
+                window.localStorage["password"] = p;             
+                $.mobile.changePage("member.html");
+            } else {
+                navigator.notification.alert("Your login failed", function() {});
+            }
+         $("#submitButton").removeAttr("disabled");
+        },"json");
+    } else {
+        navigator.notification.alert("You must enter a username and password", function() {});
+        $("#submitButton").removeAttr("disabled");
+    }
+    return false;
+}
+
+function deviceReady() {  
+	$("#loginForm").on("submit",handleLogin);
 }
