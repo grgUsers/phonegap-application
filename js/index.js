@@ -30,9 +30,9 @@ function deviceReady() {
 		$.ajax({ 
 			 type: 'POST', 
 			 url: 'http://blog.grassrootsgroup.com/phonegap/service.php', 
-			 crossDomain: true,
+			 crossDomain: false,
 			 data:  {username: u, password: p},
-			 dataType: 'jsonp', 
+			 dataType: 'json', 
 			 async: false,
 	
 			 success: function (response){ 
@@ -49,7 +49,7 @@ function deviceReady() {
 			 },
 			 error: function(error){
 				 //alert(response.success);
-				alert('Could not connect to the database' + error);
+				alert('Could not connect to the database' + JSON.stringify(error));
 			}
 		}); 
 	}
