@@ -1,47 +1,31 @@
 document.addEventListener("deviceready", deviceReady, false);
 
 function deviceReady() {
-	console.log("device ready")
-	function checkConnection() {
-		var networkState = navigator.network.connection.type;
-	
-		var states = {};
-		states[Connection.UNKNOWN]  = 'unknown';
-		states[Connection.ETHERNET] = 'Ether';
-		states[Connection.WIFI]     = 'wifi';
-		states[Connection.CELL_2G]  = '2g';
-		states[Connection.CELL_3G]  = '3g';
-		states[Connection.CELL_4G]  = '4g';
-		states[Connection.NONE]     = 'no connection';
+//start of ready
 		
-		return states;
-	}
-	
-	function validateForm() {
-		//disable the button so we can't resubmit while we wait
-		var u = $("#username", this).val();
-		var p = $("#password", this).val();
-		
-		if(checkConnection != "no connection" || checkConnection != "2g") {
-			var uLs = window.localStorage.getItem("username"),
-				pLs = window.localStorage.getItem("password");
-				
-			if(uLs && pLs) {
-				$.mobile.changePage( $("#loading"), "flip", true, true );
-				loginAjax(uLs,pLs);
-				console.log("logging in with local storage details")
-			} else if(u != '' && p!= '') {
-				$.mobile.changePage( $("#loading"), "flip", true, true );
-				loginAjax(u,p);
-				console.log("logging in with form credentials")
+	$("#loginForm #submitButton").click(function() {
+		if($("#loginForm #username").val() != "" && $("#loginForm #password").val() != "") {	
+			if(navigator.network.connection.type != Connection.NONE) {
+				//check local storgae for login
+				var uLs = window.localStorage.getItem("username"),
+					pLs = window.localStorage.getItem("password")
+					user = $("#loginForm #username").val(),
+					pass = $("#loginForm #password").val();
+					
+				if(uLs && pLs != "" || !$(uls, pLs).empty()) {
+					loginAjax(uLs,pLs);
+				} else {
+					//get values form the form
+					loginAjax(user,pass);
+				}
 			} else {
-				alert("You haven't entered anything");
+				//check local storage for login
 			}
 		} else {
-			alert('an internet connection cannot be found, or your connection is too weak');
+			alert("no login details have been entered")
 		}
-	}
-	
+	});
+		
 	function loginAjax(u,p) {
 		$.ajax({ 
 			 type: 'POST', 
@@ -52,7 +36,7 @@ function deviceReady() {
 			 async: false,
 	
 			 success: function (response){ 
-				if (response.success) { 
+				if (response.success == "true") { 
 					window.localStorage["username"] = u;
 					window.localStorage["password"] = p; 
 					//window.localStorage["UID"] = data.uid;           
@@ -69,49 +53,6 @@ function deviceReady() {
 			}
 		}); 
 	}
+	
+//end of ready
 }
-
-/*$(document).ready(function() {
-	$("#loginForm").on("submit",function(e) {
-		//disable the button so we can't resubmit while we wait
-		//$("#submitButton",this).attr("disabled","disabled");
-		var u = $("#username", this).val();
-		var p = $("#password", this).val();
-		
-		if(u != '' && p!= '') {
-			$.ajax({ 
-				 type: 'POST', 
-				 url: 'http://blog.grassrootsgroup.com/phonegap/service.php', 
-				 crossDomain: true,
-				 data:  {username: u, password: p},
-				 dataType: 'json', 
-				 async: false,
-	
-				 success: function (response){ 
-					alert("response"); 
-					if (response.success) { 
-						alert("you're logged in");
-						window.localStorage["email"] = e;
-						window.localStorage["password"] = p; 
-						//window.localStorage["UID"] = data.uid;           
-						window.location = "member.html";
-					} 
-					else {
-	
-						alert("Your login failed");
-						//window.location("main.html");
-					}
-				 },
-				 error: function(error){
-					 //alert(response.success);
-					alert('Could not connect to the database' + error);
-				}
-			}); 
-		} else {
-			alert("You haven't entered anything", function() {});
-		}
-		
-		return false;
-	});
-
-});*/
