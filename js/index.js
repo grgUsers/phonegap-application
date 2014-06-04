@@ -24,18 +24,22 @@ function handleLogin() {
 		  url: "http://blog.grassrootsgroup.com/phonegap/service.php",
 		  dataType: 'json',
 		  async: false,
-		  data: { username: u ,password: p }
-		}).done(function( data ) {
-			console.log("returned data: " + data)
-			if(data == "true") {
-				//store
-				window.localStorage["username"] = u;
-				window.localStorage["password"] = p;             
-				$.mobile.changePage("member.html");
-			} else {
-				navigator.notification.alert("Your login failed", function() {});
+		  data: { username: u ,password: p },
+		  success: function (data) { 
+				$.each(data, function(index, element) {
+					console.log("returned data" + element)
+				});
+				
+				if(data == "true") {
+					//store
+					window.localStorage["username"] = u;
+					window.localStorage["password"] = p;             
+					$.mobile.changePage("member.html");
+				} else {
+					navigator.notification.alert("Your login failed", function() {});
+				}
 			}
-	  	});
+		})
     } else {
         navigator.notification.alert("You must enter a username and password", function() {});
         //$("#submitButton").removeAttr("disabled");
