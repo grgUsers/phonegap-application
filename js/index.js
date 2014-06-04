@@ -40,15 +40,15 @@ function handleLogin(u, p) {
 }
 
 function deviceReady() {  
-	$("#loginForm #submitButton").click(function() { 
 	if(localStorage.getItem('username') && localStorage.getItem('password')) {
 		var u = localStorage.getItem('username');
 		var p = localStorage.getItem('password');
 		handleLogin(u,p);
-	} else {
+	}
+	 
+	$("#loginForm #submitButton").click(function() { 
 		var u = $("#loginForm #username").val();
 		var p = $("#loginForm #password").val();
 		handleLogin(u,p); 
-	}
-});
+	});
 }
