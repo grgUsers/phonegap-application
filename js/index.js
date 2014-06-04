@@ -12,7 +12,7 @@ function checkPreAuth() {
 function handleLogin() {
     var form = $("#loginForm");    
     //disable the button so we can't resubmit while we wait
-    $("#submitButton",form).attr("disabled","disabled");
+    //$("#submitButton",form).attr("disabled","disabled");
     var u = $("#username", form).val();
     var p = $("#password", form).val();
     console.log("click");
@@ -30,7 +30,7 @@ function handleLogin() {
         },"json");
     } else {
         navigator.notification.alert("You must enter a username and password", function() {});
-        $("#submitButton").removeAttr("disabled");
+        //$("#submitButton").removeAttr("disabled");
     }
     return false;
 }
