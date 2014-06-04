@@ -13,12 +13,12 @@ function handleLogin() {
     var form = $("#loginForm");    
     //disable the button so we can't resubmit while we wait
     //$("#submitButton",form).attr("disabled","disabled");
-    var u = $("#username", form).val();
-    var p = $("#password", form).val();
-    console.log("click");
+    var u = $("#loginForm #username").val();
+    var p = $("#loginForm #password").val();
+
     if(u != '' && p!= '') {
         $.post("http://blog.grassrootsgroup.com/phonegap/service.php", {username:u,password:p}, function(res) {
-            if(res == true) {
+            if(res == "true") {
                 //store
                 window.localStorage["username"] = u;
                 window.localStorage["password"] = p;             
