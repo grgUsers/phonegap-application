@@ -9,14 +9,14 @@
         <title>Hello World</title>
     </head>
     <body>
-        <div data-role="page" id="login">
+    <div data-role="page" id="login">
         
             <div data-role="header">
             <h1>Welcome To My Homepage</h1>
             </div>
             
             <div data-role="main" class="ui-content">
-                <form id="loginForm">
+              <form id="loginForm" method="post">
                 
                 <div data-role="fieldcontain" class="ui-hide-label">
                     <label for="username">Username:</label>
@@ -28,8 +28,8 @@
                     <input type="password" name="password" id="password" value="" placeholder="Insert Password" />
                 </div>
                 
-                <input type="submit" value="Login" id="submitButton">
-                
+                      <input type="submit" value="Login" id="submitButton" onClick="javascript:return false;">
+          
                 </form>
             </div>
             
@@ -45,7 +45,7 @@
             </div>
             
             <div data-role="main" class="ui-content">
-       	    <img src="img/loading.gif" width="512" height="512">
+       	    <img src="img/loading.gif" width="200">
             <p class="blink">Logging in... Please wait</p>
             </div>
             

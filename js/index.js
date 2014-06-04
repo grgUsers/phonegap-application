@@ -1,7 +1,7 @@
 document.addEventListener("deviceready", deviceReady, false);
 
 function deviceReady() {
-	
+	console.log("device ready")
 	function checkConnection() {
 		var networkState = navigator.network.connection.type;
 	
@@ -13,9 +13,11 @@ function deviceReady() {
 		states[Connection.CELL_3G]  = '3g';
 		states[Connection.CELL_4G]  = '4g';
 		states[Connection.NONE]     = 'no connection';
+		
+		return states;
 	}
-
-	$("#loginForm").on("submit",function(e) {
+	
+	function validateForm() {
 		//disable the button so we can't resubmit while we wait
 		var u = $("#username", this).val();
 		var p = $("#password", this).val();
@@ -25,21 +27,22 @@ function deviceReady() {
 				pLs = window.localStorage.getItem("password");
 				
 			if(uLs && pLs) {
+				$.mobile.changePage( $("#loading"), "flip", true, true );
 				loginAjax(uLs,pLs);
+				console.log("logging in with local storage details")
 			} else if(u != '' && p!= '') {
+				$.mobile.changePage( $("#loading"), "flip", true, true );
 				loginAjax(u,p);
+				console.log("logging in with form credentials")
 			} else {
 				alert("You haven't entered anything");
 			}
 		} else {
 			alert('an internet connection cannot be found, or your connection is too weak');
 		}
-		return false;
-	});
+	}
 	
 	function loginAjax(u,p) {
-		$.mobile.changePage( $("#loading"), "flip", true, true );
-		
 		$.ajax({ 
 			 type: 'POST', 
 			 url: 'http://blog.grassrootsgroup.com/phonegap/service.php', 
@@ -66,7 +69,6 @@ function deviceReady() {
 			}
 		}); 
 	}
-
 }
 
 /*$(document).ready(function() {
