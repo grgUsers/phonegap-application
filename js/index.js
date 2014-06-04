@@ -26,8 +26,7 @@ function handleLogin() {
 		  async: false,
 		  data: { username: u ,password: p }
 		}).done(function( data ) {
-			var obj = jQuery.parseJSON( data );
-			console.log("returned data: " + obj.success)
+			console.log("returned data: " + data)
 			if(data == "true") {
 				//store
 				window.localStorage["username"] = u;
