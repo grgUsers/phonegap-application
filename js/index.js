@@ -10,7 +10,7 @@ function checkPreAuth() {
 }
 
 function handleLogin(u, p) {
-	$.mobile.changePage( "#loading", { transition: "slideup", changeHash: false });
+	$.mobile.changePage( "#loading", { transition: "flow", changeHash: false });
     var form = $("#loginForm");    
     //disable the button so we can't resubmit while we wait
     //$("#submitButton",form).attr("disabled","disabled");
@@ -27,7 +27,7 @@ function handleLogin(u, p) {
 					//store
 					window.localStorage["username"] = u;
 					window.localStorage["password"] = p;             
-					$.mobile.changePage("member.html");
+					$.mobile.changePage( "member.html", { transition: "turn", changeHash: false });
 				} else {
 					navigator.notification.vibrate(800);
 					navigator.notification.alert(
