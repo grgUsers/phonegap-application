@@ -36,16 +36,18 @@ function handleLogin(u, p) {
 						'Incorrect login',            // title
 						'Exit'                  // buttonName
 					);
+					$.mobile.changePage( "#login", { transition: "flow", changeHash: false });
 				}
 			}
 		})
     } else {
 		navigator.notification.vibrate(800);
         navigator.notification.alert(
-			'Your login details are incorrect',  // message
-			'Incorrect login',            // title
+			'Your username or password empty',  // message
+			'Missing information',            // title
 			'Exit'                  // buttonName
 		);
+		$.mobile.changePage( "#login", { transition: "flow", changeHash: false });
     }
     return false;
 }
