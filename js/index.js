@@ -10,6 +10,7 @@ function checkPreAuth() {
 }
 
 function handleLogin(u, p) {
+	$.mobile.changePage( "#loading", { transition: "slideup", changeHash: false });
     var form = $("#loginForm");    
     //disable the button so we can't resubmit while we wait
     //$("#submitButton",form).attr("disabled","disabled");
@@ -28,13 +29,22 @@ function handleLogin(u, p) {
 					window.localStorage["password"] = p;             
 					$.mobile.changePage("member.html");
 				} else {
-					navigator.notification.alert("Your login failed", function() {});
+					navigator.notification.vibrate(800);
+					navigator.notification.alert(
+						'Your login details are incorrect',  // message
+						'Incorrect login',            // title
+						'Exit'                  // buttonName
+					);
 				}
 			}
 		})
     } else {
-        navigator.notification.alert("You must enter a username and password", function() {});
-        //$("#submitButton").removeAttr("disabled");
+		navigator.notification.vibrate(800);
+        navigator.notification.alert(
+			'Your login details are incorrect',  // message
+			'Incorrect login',            // title
+			'Exit'                  // buttonName
+		);
     }
     return false;
 }
