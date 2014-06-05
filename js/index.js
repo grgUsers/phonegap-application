@@ -10,7 +10,7 @@ function checkPreAuth() {
 }
 
 function handleLogin(u, p) {
-	$.mobile.changePage( "#loading", { transition: "flow", changeHash: false });
+	$.mobile.changePage( "#loading", { transition: "fade", changeHash: false });
     var form = $("#loginForm");    
     //disable the button so we can't resubmit while we wait
     //$("#submitButton",form).attr("disabled","disabled");
@@ -36,7 +36,7 @@ function handleLogin(u, p) {
 						'Incorrect login',            // title
 						'Exit'                  // buttonName
 					);
-					$.mobile.changePage( "#login", { transition: "flow", changeHash: false });
+					$.mobile.changePage( "#login", { transition: "fade", changeHash: false });
 				}
 			}
 		})
@@ -47,7 +47,7 @@ function handleLogin(u, p) {
 			'Missing information',            // title
 			'Exit'                  // buttonName
 		);
-		$.mobile.changePage( "#login", { transition: "flow", changeHash: false });
+		$.mobile.changePage( "#login", { transition: "fade", changeHash: false });
     }
     return false;
 }
