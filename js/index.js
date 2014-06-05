@@ -26,7 +26,8 @@ function handleLogin(u, p) {
 				if(JSON.parse(data) == true) {
 					//store
 					window.localStorage["username"] = u;
-					window.localStorage["password"] = p;             
+					window.localStorage["password"] = p;  
+					navigator.notification.vibrate(800);           
 					$.mobile.changePage( "member.html", { transition: "turn", changeHash: false });
 				} else {
 					navigator.notification.vibrate(800);
