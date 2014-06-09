@@ -1,27 +1,12 @@
 document.addEventListener("deviceready", deviceReady, true);
 
-function checkPreAuth() {
-	console.log("checking pre auth procedure..")
-    var form = $("#loginForm");
-    if(window.localStorage["username"] != undefined && window.localStorage["password"] != undefined) {
-        var userLS = $("#username", form).val(window.localStorage["username"]),
-        	passLS = $("#password", form).val(window.localStorage["password"]);
-			
-		//form.find("#username").attr("value", userLS);
-		//form.find("#password").attr("value", passLS);
-	
-		handleLogin(userLS,passLS);
-    }
-}
-
 function handleLogin(u, p) {
-	console.log("Activating log in authority...")
 	$.mobile.changePage( "#loading", { transition: "fade", changeHash: false });
     var form = $("#loginForm");    
     //disable the button so we can't resubmit while we wait
     //$("#submitButton",form).attr("disabled","disabled");
 
-    if(u != '' && p!= '' || u != undefined && p!= undefined) {
+    if(u != '' && p!= '') {
 		$.ajax({
 		  type: "POST",
 		  url: "http://blog.grassrootsgroup.com/phonegap/service.php",
@@ -59,14 +44,19 @@ function handleLogin(u, p) {
 }
 
 function deviceReady() {  
-console.log("Initialising all major systems...")
 	if(localStorage.getItem('username') && localStorage.getItem('password')) {
-		checkPreAuth();
-	} else {	 
-		$("#loginForm #submitButton").click(function() { 
-			var u = $("#loginForm #username").val();
-			var p = $("#loginForm #password").val();
-			handleLogin(u,p); 
-		});
+		var u = localStorage.getItem('username');
+		var p = localStorage.getItem('password');
+		
+		$("#loginForm #username").attr("value", u);
+		$("#loginForm #password").attr("value", p);
+		
+		handleLogin(u,p);
 	}
+	 
+	$("#loginForm #submitButton").click(function() { 
+		var u = $("#loginForm #username").val();
+		var p = $("#loginForm #password").val();
+		handleLogin(u,p); 
+	});
 }
