@@ -7,7 +7,10 @@ function checkPreAuth() {
         var userLS = $("#username", form).val(window.localStorage["username"]),
         	passLS = $("#password", form).val(window.localStorage["password"]);
 			
-        handleLogin(userLS,passLS);
+		form.find("#username").attr("value", userLS);
+		form.find("#password").attr("value", passLS);
+	
+		handleLogin(userLS,passLS);
     }
 }
 
