@@ -1,19 +1,5 @@
 document.addEventListener("deviceready", deviceReady, true);
 
-function checkPreAuth() {
-	console.log("checking pre auth procedure..")
-    var form = $("#loginForm");
-    if(window.localStorage["username"] != undefined && window.localStorage["password"] != undefined) {
-        var userLS = $("#username", form).val(window.localStorage["username"]),
-        	passLS = $("#password", form).val(window.localStorage["password"]);
-			
-		form.find("#username").attr("value", userLS);
-		form.find("#password").attr("value", passLS);
-	
-		handleLogin(userLS,passLS);
-    }
-}
-
 function handleLogin(u, p) {
 	console.log("Activating log in authority...")
 	$.mobile.changePage( "#loading", { transition: "fade", changeHash: false });
@@ -61,7 +47,17 @@ function handleLogin(u, p) {
 function deviceReady() {  
 console.log("Initialising all major systems...")
 	if(localStorage.getItem('username') && localStorage.getItem('password')) {
-		checkPreAuth();
+		console.log("checking pre auth procedure..")
+		var form = $("#loginForm");
+		if(window.localStorage["username"] != undefined && window.localStorage["password"] != undefined) {
+			var userLS = $("#username", form).val(window.localStorage["username"]),
+				passLS = $("#password", form).val(window.localStorage["password"]);
+				
+			form.find("#username").attr("value", userLS);
+			form.find("#password").attr("value", passLS);
+		
+			handleLogin(userLS,passLS);
+		}
 	} else {	 
 		$("#loginForm #submitButton").click(function() { 
 			var u = $("#loginForm #username").val();
