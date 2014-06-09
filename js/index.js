@@ -6,7 +6,13 @@ function checkPreAuth() {
     if(window.localStorage["username"] != undefined && window.localStorage["password"] != undefined) {
         var userLS = $("#username", form).val(window.localStorage["username"]),
         	passLS = $("#password", form).val(window.localStorage["password"]);
-        handleLogin(userLS,passLS);
+			
+		form.find("#username").attr("value", userLS);
+		form.find("#password").attr("value", passLS);
+		
+        setTimeout(function() {
+			handleLogin(userLS,passLS);
+		}, 1000);
     }
 }
 
@@ -17,7 +23,7 @@ function handleLogin(u, p) {
     //disable the button so we can't resubmit while we wait
     //$("#submitButton",form).attr("disabled","disabled");
 
-    if(u != '' && p!= '') {
+    if(u != '' && p!= '' || u != undefined && p!= undefined) {
 		$.ajax({
 		  type: "POST",
 		  url: "http://blog.grassrootsgroup.com/phonegap/service.php",
@@ -57,14 +63,12 @@ function handleLogin(u, p) {
 function deviceReady() {  
 console.log("Initialising all major systems...")
 	if(localStorage.getItem('username') && localStorage.getItem('password')) {
-		var u = localStorage.getItem('username');
-		var p = localStorage.getItem('password');
-		handleLogin(u,p);
+		checkPreAuth();
+	} else {	 
+		$("#loginForm #submitButton").click(function() { 
+			var u = $("#loginForm #username").val();
+			var p = $("#loginForm #password").val();
+			handleLogin(u,p); 
+		});
 	}
-	 
-	$("#loginForm #submitButton").click(function() { 
-		var u = $("#loginForm #username").val();
-		var p = $("#loginForm #password").val();
-		handleLogin(u,p); 
-	});
 }
