@@ -9,10 +9,8 @@ function checkPreAuth() {
 			
 		form.find("#username").attr("value", userLS);
 		form.find("#password").attr("value", passLS);
-		
-        setTimeout(function() {
-			handleLogin(userLS,passLS);
-		}, 1000);
+	
+		handleLogin(userLS,passLS);
     }
 }
 
