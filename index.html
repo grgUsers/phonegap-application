@@ -10,8 +10,27 @@
     </head>
     <body>
     
+        <!-- header -->
+        <div data-role="header" data-id="header-guest">
+        	<h1>header guest</h1>
+        </div>
+        <div data-role="header" data-id="header-member">
+        	<h1>header member</h1>
+        </div>
+        
+        <!-- footer -->
+        <div data-role="footer" data-id="footer-guest">
+        	<h1>footer guest</h1>
+        </div>
+        <div data-role="footer" data-id="footer-member">
+        	<h1>footer member</h1>
+        </div>
+        
+        
+        
+    
     	<div data-role="page" id="login">
-            <!-- #include file="header-guest.html" -->
+			<div data-role="header" data-id="header-guest"></div>
             <div data-role="main" class="ui-content">
                 <form id="loginForm" method="post">
                 
@@ -29,57 +48,57 @@
                 
                 </form>
             </div>
-            <!-- #include file="footer-guest.html" -->
+			<div data-role="header" data-id="footer-guest"></div>
         </div>
         
         <!--LOADING SECTION-->
         <div data-role="page" id="loading">
-            <!-- #include file="header-guest.html" -->
+			<div data-role="header" data-id="header-guest"></div>
             <div data-role="main" class="ui-content">
                 <img src="img/loading.gif" width="60">
                 <p class="blink">Logging in... Please wait</p>
             </div>
-            <!-- #include file="footer-guest.html" -->
+			<div data-role="header" data-id="footer-guest"></div>
         </div>
-        <!--END LOADING SECTION-->
+        <!--END LOADING SECTION-->        
         
         <!-- pages -->
         <div data-role="page" id="member-page1">
-            <!-- #include file="header-member.html" -->
+			<div data-role="header" data-id="header-member"></div>
             <div data-role="main" class="ui-content">
                 <p>Member page 1</p>
                 <a href="#member-page2">Member Page 2</a>
             </div>
-            <!-- #include file="header-footer.html" -->
+			<div data-role="footer" data-id="footer-member"></div>
         </div>
 
         <div data-role="page" id="member-page2">
-            <!-- #include file="header-member.html" -->
+			<div data-role="header" data-id="header-member"></div>
             <div data-role="main" class="ui-content">
                 <p>Member page 2</p>
                 <a href="#member-page1">Member Page 1</a>
                 <a href="#member-page3">Member Page 3</a>
             </div>
-            <!-- #include file="header-footer.html" -->
+			<div data-role="footer" data-id="footer-member"></div>
         </div>
 
         <div data-role="page" id="member-page3">
-            <!-- #include file="header-member.html" -->
+			<div data-role="header" data-id="header-member"></div>
             <div data-role="main" class="ui-content">
                 <p>Member page 3</p>
                 <a href="#member-page2">Member Page 2</a>
                 <a href="#member-page4">Member Page 4</a>
             </div>
-            <!-- #include file="header-footer.html" -->
+			<div data-role="footer" data-id="footer-member"></div>
         </div>
         
         <div data-role="page" id="member-page4">
-            <!-- #include file="header-member.html" -->
+			<div data-role="header" data-id="header-member"></div>
             <div data-role="main" class="ui-content">
                 <p>Member page 4</p>
                 <a href="#member-page3">Member Page 3</a>
             </div>
-            <!-- #include file="header-footer.html" -->
+			<div data-role="footer" data-id="footer-member"></div>
         </div>
         <!-- pages -->
        
