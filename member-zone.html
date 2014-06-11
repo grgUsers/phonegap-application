@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-mobile.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+    </head>
+    <body>
+    	<!-- generic header -->
+		<div class="header">
+        	<h1>Member header</h1>
+        </div>
+        
+        <div data-role="page" id="page1">
+            <div role="main" class="ui-content">
+                <p>Page One</p>
+                <p><a href="#page2" data-transition="turn">Page 2</a></p>
+            </div>
+        </div>
+        
+        <div data-role="page" id="page2">
+            <div role="main" class="ui-content">
+                <p>Page Two</p>
+                <p><a href="#page1" data-transition="turn">Page 1</a></p>
+                <p><a href="#page3" data-transition="turn">Page 3</a></p>
+            </div>
+        </div>
+        
+        <div data-role="page" id="page3">
+            <div role="main" class="ui-content">
+                <p>Page Three</p>
+                <p><a href="#page1" data-transition="turn">Page 2</a></p>
+                <p><a href="#page4" data-transition="turn">Page 4</a></p>
+            </div>
+        </div>
+        
+        <div data-role="page" id="page4">
+            <div role="main" class="ui-content">
+                <p>Page Four</p>
+                <p><a href="#page3" data-transition="turn">Page 3</a></p>
+            </div>
+        </div>
+            
+    	<!-- generic footer -->
+		<div class="footer">
+        	<h1>Member Footer</h1>
+        </div>
+        
+        
+        <!-- javascript files 
+        <script type="text/javascript" src="phonegap.js"></script>-->
+		<script type="text/javascript" src="js/jquery-1.11.js"></script>
+		<script type="text/javascript" src="js/jquery-mobile.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>

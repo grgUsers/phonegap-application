@@ -19,9 +19,9 @@ function handleLogin(u, p) {
 					window.localStorage["username"] = u;
 					window.localStorage["password"] = p;  
 					//navigator.notification.vibrate(800);           
-					$.mobile.changePage( "member.html", { transition: "turn", changeHash: false });
+					$.mobile.changePage( "member-zone.html", { transition: "turn", changeHash: false });
 				} else {
-					//navigator.notification.vibrate(800);
+					navigator.notification.vibrate(800);
 					navigator.notification.alert(
 						'Your login details are incorrect',  // message
 						'Incorrect login',            // title
