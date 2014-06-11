@@ -1,5 +1,8 @@
 document.addEventListener("deviceready", deviceReady, true);
 $('.header-member').load('header-member.html')
+$('.header-member').load('footer-member.html')
+$('.header-guest').load('header-guest.html')
+$('.header-guest').load('footer-guest.html')
 
 function handleLogin(u, p) {
 	$.mobile.changePage( "#loading", { transition: "fade", changeHash: false });
