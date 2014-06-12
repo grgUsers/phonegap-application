@@ -38,8 +38,8 @@ body {
 /* itf specific */
 .ui-page-theme-a .header-member,
 .ui-page-theme-a .header-guest {
-	background: url('../img/logo-page.png') no-repeat center top;
-	height: 42px;
+	background: url('../img/logo-page.png') no-repeat center bottom;
+	height: 88px;
 }
 
 
