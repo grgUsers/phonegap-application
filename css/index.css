@@ -6,7 +6,7 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
+    background: #51b0d5 url('images/bg.png') repeat-x 0 0;
     background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
@@ -30,15 +30,12 @@ body {
 
 /* jt resets */
 .ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit,
-.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper  {
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper, ui-page   {
 	background: none;
 	border: none;
 	text-shadow: none;
 }
 /* itf specific */
-.ui-page-theme-a {
-	background: #51b0d5 url('images/bg.png') repeat-x 0 0;
-}
 .header-member,
 .header-guest {
 	background: url('img/logo-page.png') no-repeat 50% 0;
