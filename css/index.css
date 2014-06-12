@@ -14,6 +14,8 @@ body {
     padding:0px;
     text-transform:uppercase;
     width:100%;
+	text-shadow: none;
+	border: none;
 
 }
 
@@ -31,12 +33,12 @@ body {
 	text-shadow: none;
 }
 .ui-page {
-
+    background: #51b0d5 url('../img/bg.png') repeat-x 0 0;
 }
 /* itf specific */
 .header-member,
 .header-guest {
-	background: url('../img/logo-page.png') no-repeat 50% 0;
+	background: url('../img/logo-page.png') no-repeat center top;
 	height: 42px;
 }
 
