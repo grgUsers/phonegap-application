@@ -28,6 +28,12 @@ body {
 
 }
 
+/* jt resets */
+.ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit {
+	background: none;
+	border: none;
+	text-shadow: none;
+}
 /* itf specific */
 .ui-page-theme-a {
 	background: #51b0d5 url('images/bg.png') repeat-x 0 0;
