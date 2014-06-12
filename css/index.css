@@ -32,9 +32,6 @@ body {
 	border: none;
 	text-shadow: none;
 }
-.page {
-/*    background: #51b0d5 url('../img/bg.png') repeat-x 0 0;*/
-}
 /* itf specific */
 .ui-page-theme-a .header-member,
 .ui-page-theme-a .header-guest {
