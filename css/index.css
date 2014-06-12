@@ -33,7 +33,7 @@ body {
 	text-shadow: none;
 }
 .page {
-    background: #51b0d5 url('../img/bg.png') repeat-x 0 0;
+/*    background: #51b0d5 url('../img/bg.png') repeat-x 0 0;*/
 }
 /* itf specific */
 .header-member,
