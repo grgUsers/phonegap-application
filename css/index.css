@@ -19,7 +19,7 @@ body {
 
 }
 
-/* jt resets */
+/* resets */
 .ui-bar-a, 
 .ui-bar-a .ui-bar-inherit,
 .ui-body-a .ui-bar-inherit,
@@ -37,6 +37,7 @@ body {
 .ui-page-theme-a .header-guest {
 	background: url('../img/logo-page.png') no-repeat center bottom;
 	height: 88px;
+	padding-bottom: 15px;
 }
 
 
