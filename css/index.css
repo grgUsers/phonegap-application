@@ -25,11 +25,13 @@ body {
     padding:0px;
     text-transform:uppercase;
     width:100%;
-	background: #51b0d5 url('images/bg.png') repeat-x 0 0;
+
 }
 
 /* itf specific */
-
+.ui-page-theme-a {
+	background: #51b0d5 url('images/bg.png') repeat-x 0 0;
+}
 
 /* */
 
