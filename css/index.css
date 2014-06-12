@@ -42,6 +42,7 @@ body {
 .header-member,
 .header-guest {
 	background: url('img/logo-page.png') no-repeat 50% 0;
+	height: 42px;
 }
 
 
