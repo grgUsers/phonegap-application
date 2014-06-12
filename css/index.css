@@ -36,8 +36,8 @@ body {
 /*    background: #51b0d5 url('../img/bg.png') repeat-x 0 0;*/
 }
 /* itf specific */
-.ui-page .header-member,
-.ui-page .header-guest {
+.ui-page-theme-a .header-member,
+.ui-page-theme-a .header-guest {
 	background: url('../img/logo-page.png') no-repeat center top;
 	height: 42px;
 }
