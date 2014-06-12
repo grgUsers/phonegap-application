@@ -21,12 +21,9 @@ body {
 
 /* jt resets */
 .ui-bar-a, 
-.ui-page-theme-a .ui-bar-inherit, 
-.ui-bar-a .ui-bar-inherit, 
-.ui-body-a .ui-bar-inherit, 
-.ui-group-theme-a .ui-bar-inherit, 
+.ui-bar-inherit, 
 .ui-page-theme-a, 
-.ui-page-theme-a .ui-panel-wrapper, 
+.ui-panel-wrapper, 
 .ui-page {
 	background: none;
 	border: none;
