@@ -3,6 +3,22 @@
 }
 
 
+/* resets */
+.ui-bar-a, 
+.ui-bar-a .ui-bar-inherit,
+.ui-body-a .ui-bar-inherit,
+.ui-overlay-a,
+.ui-bar-inherit, 
+.ui-page-theme-a, 
+.ui-page-theme-a .ui-bar-inherit,
+.ui-page-theme-a .ui-panel-wrapper, 
+.ui-page {
+	background: none;
+	border: none;
+	text-shadow: none;
+}
+
+
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
@@ -18,20 +34,6 @@ body {
 	text-shadow: none;
 	border: none;
 	color: #fff;
-}
-/* resets */
-.ui-bar-a, 
-.ui-bar-a .ui-bar-inherit,
-.ui-body-a .ui-bar-inherit,
-.ui-overlay-a,
-.ui-bar-inherit, 
-.ui-page-theme-a, 
-.ui-page-theme-a .ui-bar-inherit,
-.ui-page-theme-a .ui-panel-wrapper, 
-.ui-page {
-	background: none;
-	border: none;
-	text-shadow: none;
 }
 
 /* itf specific */
