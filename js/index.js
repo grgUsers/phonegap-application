@@ -23,7 +23,7 @@ function handleLogin(u, p) {
 					window.localStorage["username"] = u;
 					window.localStorage["password"] = p;  
 					//navigator.notification.vibrate(800);           
-					$.mobile.changePage( "#member-page1", { transition: "fade", changeHash: false });
+					$.mobile.changePage( "#member-page2", { transition: "fade", changeHash: false });
 				} else {
 					navigator.notification.vibrate(800);
 					navigator.notification.alert(
