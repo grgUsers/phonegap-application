@@ -63,4 +63,13 @@ function deviceReady() {
 		var p = $("#loginForm #password").val();
 		handleLogin(u,p); 
 	});
+	
+	//adding in rolling tips in member footer
+	
+	var tips =  ["Get you child to eat fruit by discuising it in other food", "An apple a day keeps teeth from falling out", "If you child says no to vegatables, tell them santa won't come"];
+	
+	tips.forEach(function(data) {
+		//$("footer-member").html("<p>"++"</p>")
+		console.log(data)
+	});
 }
