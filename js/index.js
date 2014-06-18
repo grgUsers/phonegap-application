@@ -4,6 +4,24 @@ $('.footer-member').load('footer-member.html')
 $('.header-guest').load('header-guest.html')
 $('.footer-guest').load('footer-guest.html')
 
+function deviceReady() {  
+	if(localStorage.getItem('username') && localStorage.getItem('password')) {
+		var u = localStorage.getItem('username');
+		var p = localStorage.getItem('password');
+		
+		$("#loginForm #username").attr("value", u);
+		$("#loginForm #password").attr("value", p);
+		
+		handleLogin(u,p);
+	}
+	 
+	$("#loginForm #submitButton").click(function() { 
+		var u = $("#loginForm #username").val();
+		var p = $("#loginForm #password").val();
+		handleLogin(u,p); 
+	});
+}
+
 function handleLogin(u, p) {
 	$.mobile.changePage( "#loading", { transition: "fade", changeHash: false });
     var form = $("#loginForm");    
@@ -24,6 +42,7 @@ function handleLogin(u, p) {
 					window.localStorage["password"] = p;  
 					//navigator.notification.vibrate(800);           
 					$.mobile.changePage( "#member-page2", { transition: "fade", changeHash: false });
+					rollingTips();
 				} else {
 					navigator.notification.vibrate(800);
 					navigator.notification.alert(
@@ -47,31 +66,15 @@ function handleLogin(u, p) {
     return false;
 }
 
-function deviceReady() {  
-	if(localStorage.getItem('username') && localStorage.getItem('password')) {
-		var u = localStorage.getItem('username');
-		var p = localStorage.getItem('password');
-		
-		$("#loginForm #username").attr("value", u);
-		$("#loginForm #password").attr("value", p);
-		
-		handleLogin(u,p);
-	}
-	 
-	$("#loginForm #submitButton").click(function() { 
-		var u = $("#loginForm #username").val();
-		var p = $("#loginForm #password").val();
-		handleLogin(u,p); 
-	});
-	
+function rollingTips() {
 	//adding in rolling tips in member footer
-	
 	var tips =  ["Get you child to eat fruit by discuising it in other food", "An apple a day keeps teeth from falling out", "If you child says no to vegatables, tell them santa won't come"];
 	
-	if(".ui-page-active") {
-		tips.forEach(function(data) {
-			//$("footer-member").html("<p>"++"</p>")
-			console.log(data)
-		});
+	var arrayLength = tips.length;
+	
+	for (var i = 0; i < arrayLength; i++) {
+		console.log(tips[i])
+		//Do something
 	}
 }
+
