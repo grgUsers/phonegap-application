@@ -20,6 +20,8 @@ function deviceReady() {
 		var p = $("#loginForm #password").val();
 		handleLogin(u,p); 
 	});
+	
+	rollingTips();
 }
 
 function handleLogin(u, p) {
@@ -42,7 +44,6 @@ function handleLogin(u, p) {
 					window.localStorage["password"] = p;  
 					//navigator.notification.vibrate(800);           
 					$.mobile.changePage( "#member-page2", { transition: "fade", changeHash: false });
-					rollingTips();
 				} else {
 					navigator.notification.vibrate(800);
 					navigator.notification.alert(
