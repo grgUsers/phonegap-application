@@ -1,8 +1,4 @@
 document.addEventListener("deviceready", deviceReady, true);
-$('.header-member').load('../header-member.html')
-$('.footer-member').load('../footer-member.html')
-$('.header-guest').load('../header-guest.html')
-$('.footer-guest').load('../footer-guest.html')
 
 function deviceReady() {  
 	if(localStorage.getItem('username') && localStorage.getItem('password')) {
@@ -22,6 +18,11 @@ function deviceReady() {
 	});
 	
 	rollingTips();
+	
+	$('.header-member').load('header-member.html');
+	$('.footer-member').load('footer-member.html');
+	$('.header-guest').load('header-guest.html');
+	$('.footer-guest').load('footer-guest.html');
 }
 
 function handleLogin(u, p) {
