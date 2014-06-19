@@ -47,13 +47,11 @@ body.ui-overlay-a {
 .header-member {	
 	height: 88px;
 	margin-bottom: 15px;
+	text-align: center;
 }
 .header-member .col1,
 .header-member .col2 {
 	float: left;
-}
-.header-member .col2 {
-	text-align: center;
 }
 
 .header-member .col3 {
