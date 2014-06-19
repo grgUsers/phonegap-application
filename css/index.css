@@ -38,7 +38,9 @@ body.ui-overlay-a {
 }
  
 /* itf specific */
-.page {
+.header-member,
+.ui-content,
+.footer-member {
 	padding: 0 10px;
 }
 .ui-page-theme-a {
