@@ -52,6 +52,11 @@ body.ui-overlay-a {
 .header-member .col2 {
 	float: left;
 }
+.header-member .col2 {
+	width: 214px;
+	margin: 0 auto;
+}
+
 .header-member .col3 {
 	float: right;
 }
