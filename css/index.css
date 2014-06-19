@@ -44,20 +44,19 @@ body.ui-overlay-a {
 .ui-page-theme-a img {
 	max-width: 100%;
 }
-.ui-page-theme-a .header-member {
-	
+.header-member {	
 	height: 88px;
-	padding-bottom: 15px;
+	margin-bottom: 15px;
 }
-.ui-page-theme-a .header-member .col1,
-.ui-page-theme-a .header-member .col2 {
+.header-member .col1,
+.header-member .col2 {
 	float: left;
 }
-.ui-page-theme-a .header-member .col3 {
+.header-member .col3 {
 	float: right;
 }
-.ui-page-theme-a .header-member .col1,
-.ui-page-theme-a .header-member .col3 {
+.header-member .col1,
+.header-member .col3 {
 	width: 42px;
 }
 
@@ -66,7 +65,7 @@ body.ui-overlay-a {
 .ui-page-theme-a .header-guest {
 	background: url('../img/logo-page.png') no-repeat center bottom;
 	height: 88px;
-	padding-bottom: 15px;
+	margin-bottom: 15px;
 }
 
 
