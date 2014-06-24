@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tot it Up</title>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+<script>
+
+$(document).ready(function() {
+
+var diary = Array();
+
+//set date
+var date = new Date();
+var month = date.getMonth() + 1
+var day = date.getDate()
+var year = date.getFullYear()
+$(".date").html( day + "/" +  month+ "/" + year);
+
+breakfast_array = [[1, "Dry Flaked Cereals", [{"fats":0},{"sugar":0},{"meat":0},{"dairy":0},{"fruit":0},{"vegetables":0},{"cereals":1}]], 
+[2, "Muesli", [{"fats":0},{"sugar":0},{"meat":0},{"dairy":0},{"fruit":0},{"vegetables":0},{"cereals":1}]],
+[3, "Porridge / Ready Brek &trade; made up with milk", [{"fats":0},{"sugar":0},{"meat":0},{"dairy":0},{"fruit":0},{"vegetables":0},{"cereals":1}]],
+[4, "Sugar coated / frosted / cholcolate cereals ( e.g. Honey Nut Cheerios&trade;, Coco Pops&trade;, Sugar Puffs&trade;", [{"fats":0},{"sugar":1},{"meat":0},{"dairy":0},{"fruit":0},{"vegetables":0},{"cereals":1}]],
+[5, "Wheat Biscuits(e.g. Weetabix&trade;)", [{"fats":0},{"sugar":0},{"meat":0},{"dairy":0},{"fruit":0},{"vegetables":0},{"cereals":1}]]];
+//console.log(breakfast_array);
+
+
+for (i = 0; i < breakfast_array.length; i++) { 
+  $(".children ul").append("<li><a class='food' id="+breakfast_array[i][0]+">"+breakfast_array[i][1]+"</a></li>");
+}
+
+$( ".children" ).on( "click", "a", function() {
+  diary.push(breakfast_array[$(this).attr("id") - 1]);
+  show_diary();
+});
+$( ".diaries" ).on( "click", ".delete", function() {
+  var id = $(this).parent().attr("id");
+  diary.splice(id, 1);
+  show_diary();
+});
+
+
+function show_diary() {
+  $(".diaries ul").html('');
+  var fats = 0, sugar = 0, meat = 0, dairy = 0, fruit = 0, vegetables = 0, cereals = 0;
+
+  for (j = 0; j < diary.length; j++) { 
+    $(".diaries ul").append("<li id="+j+">"+diary[j][1]+"  <a class='delete'> -- Delete -- </a></li>");
+	fats += diary[j][2][0]["fats"];
+	sugar += diary[j][2][1]["sugar"];
+	meat += diary[j][2][2]["meat"];
+	dairy += diary[j][2][3]["dairy"];
+	meat += diary[j][2][4]["fruit"];
+	vegetables += diary[j][2][5]["vegetables"];
+	cereals += diary[j][2][6]["cereals"];
+  }	
+  
+  //write to document
+	$(".fats span").html(fats);
+	$(".sugar span").html(sugar);
+	$(".meat span").html(meat);
+	$(".dairy span").html(dairy);
+	$(".vegetables span").html(vegetables);
+	$(".cereals span").html(cereals);
+}
+
+
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="diary">
+<h2>Your Food Diary for <span class="date"></span></h2>
+
+<div class="diaries">
+<ul></ul>
+</div>
+
+<h2>Your Food Calculation</h2>
+
+<div class="fats">Fats: <span></span></div>
+<div class="sugar">Sugar: <span></span></div>
+<div class="meat">Meat: <span></span></div>
+<div class="dairy">Dairy: <span></span></div>
+<div class="fruit">Fruit: <span></span></div>
+<div class="vegetables">Vegatables: <span></span></div>
+<div class="cereals">Cereals: <span></span></div>
+
+
+</div>
+<br /><br />
+<div class="parent">
+<a href="">Choose Breakfast cereals:</a>
+</div>
+<div class="children">
+<ul></ul>
+</div>
+
+</div>
+
+</body>
+</html>
