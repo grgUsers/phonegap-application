@@ -17,7 +17,15 @@ function deviceReady() {
 		handleLogin(u,p); 
 	});
 	
-	rollingTips();
+	//adding in rolling tips in member footer
+	var tips =  ["Get you child to eat fruit by discuising it in other food", "An apple a day keeps teeth from falling out", "If you child says no to vegatables, tell them santa won't come"];
+	
+	var arrayLength = tips.length;
+	
+	for (var i = 0; i < arrayLength; i++) {
+		console.log(tips[i])
+		//Do something
+	}
 	
 	$('.header-member').load('header-member.html');
 	$('.footer-member').load('footer-member.html');
@@ -66,17 +74,5 @@ function handleLogin(u, p) {
 		$.mobile.changePage( "#login", { transition: "fade", changeHash: false });
     }
     return false;
-}
-
-function rollingTips() {
-	//adding in rolling tips in member footer
-	var tips =  ["Get you child to eat fruit by discuising it in other food", "An apple a day keeps teeth from falling out", "If you child says no to vegatables, tell them santa won't come"];
-	
-	var arrayLength = tips.length;
-	
-	for (var i = 0; i < arrayLength; i++) {
-		console.log(tips[i])
-		//Do something
-	}
 }
 
