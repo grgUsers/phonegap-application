@@ -155,3 +155,11 @@ h1 {
 #loading {
 	text-align:center;
 }
+
+#menuPop {
+	position: abolsute;
+	z-index: 1000;
+	top: 0px;
+	right:0px;
+	width: 0px;
+}
