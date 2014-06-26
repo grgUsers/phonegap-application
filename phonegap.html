@@ -3,6 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Tot it Up</title>
+<style>
+  a { cursor:pointer }
+  .amount { display:none }
+</style>
+
+
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
 <script>
 
@@ -26,11 +32,14 @@ breakfast_array = [[1, "Dry Flaked Cereals", [{"fats":0},{"sugar":0},{"meat":0},
 
 
 for (i = 0; i < breakfast_array.length; i++) { 
-  $(".children ul").append("<li><a class='food' id="+breakfast_array[i][0]+">"+breakfast_array[i][1]+"</a></li>");
+  $(".children ul").append("<li><a class='food' id="+breakfast_array[i][0]+">"+breakfast_array[i][1]+"</a> <div class='amount'><a class='qty small' id='small'>Small Portion</a> | <a class='qty medium' id='medium'>Medium Portion</a> | <a class='qty large' id='large'>Large Portion</a></div></li>");
 }
-
-$( ".children" ).on( "click", "a", function() {
-  diary.push(breakfast_array[$(this).attr("id") - 1]);
+$( ".children" ).on( "click", ".food", function() {
+  $(this).next(".amount").slideToggle();
+});
+$( ".children" ).on( "click", ".qty", function() {
+  var qty = $(this).attr("id");
+  diary.push({Food:breakfast_array[$(this).parent().parent().children(".food").attr("id") - 1], Quantity:qty});
   show_diary();
 });
 $( ".diaries" ).on( "click", ".delete", function() {
@@ -43,16 +52,16 @@ $( ".diaries" ).on( "click", ".delete", function() {
 function show_diary() {
   $(".diaries ul").html('');
   var fats = 0, sugar = 0, meat = 0, dairy = 0, fruit = 0, vegetables = 0, cereals = 0;
-
+console.log(diary);
   for (j = 0; j < diary.length; j++) { 
-    $(".diaries ul").append("<li id="+j+">"+diary[j][1]+"  <a class='delete'> -- Delete -- </a></li>");
-	fats += diary[j][2][0]["fats"];
-	sugar += diary[j][2][1]["sugar"];
-	meat += diary[j][2][2]["meat"];
-	dairy += diary[j][2][3]["dairy"];
-	meat += diary[j][2][4]["fruit"];
-	vegetables += diary[j][2][5]["vegetables"];
-	cereals += diary[j][2][6]["cereals"];
+    $(".diaries ul").append("<li id="+j+">"+diary[j].Food[1]+" - Serving Size: "+ diary[j].Quantity + "<a class='delete'> -- Delete -- </a></li>");
+	fats += diary[j].Food[2][0]["fats"];
+	sugar += diary[j].Food[2][1]["sugar"];
+	meat += diary[j].Food[2][2]["meat"];
+	dairy += diary[j].Food[2][3]["dairy"];
+	meat += diary[j].Food[2][4]["fruit"];
+	vegetables += diary[j].Food[2][5]["vegetables"];
+	cereals += diary[j].Food[2][6]["cereals"];
   }	
   
   //write to document
