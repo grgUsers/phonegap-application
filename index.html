@@ -13,38 +13,48 @@
 		<script type="text/javascript" src="js/jquery-1.11.js"></script>
 		<script type="text/javascript" src="js/jquery-mobile.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script>	
+ 			function submitForm(v) {
+				document.getElementById(v).submit();
+			} 
+        </script>
     </head>
     <body>
         <div class="page" data-role="page" id="pre-login">
             <div data-role="header" class="header-guest" ></div>
             <div data-role="main" class="ui-content">
-            	<center><p><a href="#member-page2"><img src="img/img-page1.png" /></a></p>
-				<p>Your toddler's diet calculator</p>
-                <p><a href="#login"><img src="img/sign-up-login.png" /><br/></a></p>
-                <p>Helping you give your toddler the good balance of foods to help them lead a healthy life.</p></center>
+            	<center><a href="#member-page2"><img src="img/img-page1.png" class="image-welcome"/></a>
+				<h1>Your toddler's diet calculator</h1>
+                <p>
+                <a href="#login" class="button left hsp">Cancel</a>
+                <a href="#login" class="button right">Log in</a>
+                <div class="tidy"></div>
+                </p>
+                <h2>Helping you give your toddler the good balance of foods to help them lead a healthy life.</h2>
+                </center>
             </div>
             <div data-role="footer" class="footer-guest" ></div>
         </div>
     
     	<div class="page" data-role="page" id="login">
-			<div data-role="header" data-id="header-guest"></div>
+			<div data-role="header" class="header-guest"></div>
             <div data-role="main" class="ui-content">
-            <h1>Tot it Up login</h1>
-            <p>Please use your username and password that you used when setting up your account.</p>
-                <form id="loginForm" method="post">
+				<center><img src="img/img-sign-up.png" class="image-sign-up" /></center>
+                <form id="loginForm" name="loginForm" method="post">
                 
-                <div data-role="fieldcontain" class="ui-hide-label">
-                    <label for="username">Username:</label>
-                    <input type="text" name="username" id="username" value="" placeholder="Insert Username" />
+                <div data-role="fieldcontain first" class="ui-field-contain">
+                    <label for="username">Email</label>
+                    <input type="text" name="username" id="username" value="" />
+                    <div class="tidy"></div>
                 </div>
                 
-                <div data-role="fieldcontain" class="ui-hide-label">
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" id="password" value="" placeholder="Insert Password" />
+                <div data-role="fieldcontain" class="ui-field-contain">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" value=""  />
+                    <div class="tidy"></div>
+                    
                 </div>
-                
-                      <input type="submit" value="Login" id="submitButton" onClick="javascript:return false;">
-                
+					<input type="submit" value="Login" id="submitButton" onClick="javascript:return false;">
                 </form>
             </div>
 			<div data-role="header" data-id="footer-guest"></div>
@@ -63,6 +73,44 @@
         
         
         <!-- pages -->
+        <div class="page" data-role="page" id="toddler-details">
+			<div data-role="header" class="header-guest"></div>
+            <div data-role="main" class="ui-content">
+                <h1>Toddler's details</h1>
+                
+                <div data-role="fieldcontain first" class="ui-field-contain">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" value="" />
+                    <div class="tidy"></div>
+                </div>
+                <div data-role="fieldcontain first" class="ui-field-contain col3">
+                    <label for="dob">D.O.B</label>
+                    <input type="text" name="month" id="month" value="" />
+                    <input type="text" name="year" id="year" value="" />
+                </div>
+                <div class="tidy"></div>
+                
+                <div data-role="fieldcontain first" class="ui-field-contain">
+                    <label for="gender">Gender</label>
+                    <input type="radio" name="male" id="male" value="Male" />
+                    <input type="radio" name="female" id="female" value="Female" />
+                    <div class="tidy"></div>
+                </div>
+                
+                <p>
+                <a href="#" class="button right">Add another child</a>
+                <div class="tidy"></div>
+                </p>
+                
+                <p>
+                <a href="#" class="button left hsp">Cancel</a>
+                <a href="#" class="button right">Log in</a>
+                <div class="tidy"></div>
+                </p>
+                
+            </div>
+            <div data-role="footer" class="footer-guest" ></div>
+        </div>
         <div class="page" data-role="page" id="member-page2">
 			<div data-role="header" class="header-member"></div>
             <div data-role="main" class="ui-content">

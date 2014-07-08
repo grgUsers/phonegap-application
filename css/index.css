@@ -1,7 +1,37 @@
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
+@font-face {
+    font-family: 'TerminalDosisMedium';
+    src: url('../fonts/terminaldosis-medium-webfont.eot');
+    src: url('../fonts/terminaldosis-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/terminaldosis-medium-webfont.woff') format('woff'),
+         url('../fonts/terminaldosis-medium-webfont.ttf') format('truetype'),
+         url('../fonts/terminaldosis-medium-webfont.svg#TerminalDosisMedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'VAGRoundedLtRegular';
+    src: url('../fonts/vagrouln-webfont.eot');
+    src: url('../fonts/vagrouln-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/vagrouln-webfont.woff') format('woff'),
+         url('../fonts/vagrouln-webfont.ttf') format('truetype'),
+         url('../fonts/vagrouln-webfont.svg#VAGRoundedLtRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'vag_roundedbold';
+    src: url('../fonts/vag_rounded_bold-webfont.eot');
+    src: url('../fonts/vag_rounded_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/vag_rounded_bold-webfont.woff') format('woff'),
+         url('../fonts/vag_rounded_bold-webfont.ttf') format('truetype'),
+         url('../fonts/vag_rounded_bold-webfont.svg#vag_roundedbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
+}
 
 /* resets */
 .ui-bar-a, 
@@ -12,7 +42,46 @@
 .ui-page-theme-a, 
 .ui-page-theme-a .ui-bar-inherit,
 .ui-page-theme-a .ui-panel-wrapper, 
-.ui-page {
+.ui-page,
+.ui-body-a, 
+.ui-page-theme-a .ui-body-inherit, 
+html .ui-bar-a .ui-body-inherit, 
+html .ui-body-a .ui-body-inherit, 
+html body .ui-group-theme-a .ui-body-inherit, 
+html .ui-panel-page-container-a,
+.ui-shadow-inset,
+html .ui-bar-a .ui-btn, 
+.ui-page-theme-a .ui-btn,
+html .ui-body-a .ui-btn, 
+html body .ui-group-theme-a .ui-btn, 
+html head + body .ui-btn.ui-btn-a, 
+.ui-page-theme-a .ui-btn:visited, 
+html .ui-bar-a .ui-btn:visited, 
+html .ui-body-a .ui-btn:visited, 
+html body .ui-group-theme-a .ui-btn:visited, 
+html head + body .ui-btn.ui-btn-a:visited,
+.ui-page-theme-a .ui-btn:hover,
+html .ui-bar-a .ui-btn:hover,
+html .ui-body-a .ui-btn:hover,
+html body .ui-group-theme-a .ui-btn:hover,
+html head + body .ui-btn.ui-btn-a:hover,
+.ui-page-theme-a .ui-btn:active,
+html .ui-bar-a .ui-btn:active,
+html .ui-body-a .ui-btn:active,
+html body .ui-group-theme-a .ui-btn:active,
+html head + body .ui-btn.ui-btn-a:active,
+.ui-page-theme-a .ui-btn.ui-btn-active,
+html .ui-bar-a .ui-btn.ui-btn-active,
+html .ui-body-a .ui-btn.ui-btn-active,
+html body .ui-group-theme-a .ui-btn.ui-btn-active,
+html head + body .ui-btn.ui-btn-a.ui-btn-active,
+.ui-page-theme-a .ui-btn:visited,
+html .ui-bar-a .ui-btn:visited,
+html .ui-body-a .ui-btn:visited,
+html body .ui-group-theme-a .ui-btn:visited,
+html head + body .ui-btn.ui-btn-a:visited  {
+	-webkit-box-shadow: none;
+	box-shadow: none;
 	background: none;
 	border: none;
 	text-shadow: none;
@@ -30,7 +99,6 @@ body.ui-overlay-a {
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
     width:100%;
 	text-shadow: none;
 	border: none;
@@ -71,10 +139,10 @@ body.ui-overlay-a {
 
 
 .header-guest {
-	background: url('../img/logo-page.png') no-repeat center bottom;
 	height: 50px;
 	margin-top: 44px;
-	margin-bottom: 15px;
+	margin-bottom: 0;
+	text-align: center;
 }
 .footer-member {
 	height: 41px;
@@ -108,12 +176,164 @@ body.ui-overlay-a {
 }
 
 h1 {
-    font-size:24px;
+    font-size:34px;
     font-weight:normal;
     margin:0px;
     overflow:visible;
     padding:0px;
     text-align:center;
+    font-family: 'vag_roundedbold';
+	line-height: 1;
+	color: #ffdb36;
+}
+h2 {
+	font-family: 'vag_roundedbold';
+	line-height: 1;
+}
+.tidy {
+	clear: both;
+}
+
+
+  
+
+.ui-mobile label, .ui-controlgroup-label {
+	font-family: 'vag_roundedbold';
+	font-size: 22px;
+}
+.image-welcome {
+	padding-bottom: 10px;	
+}
+.image-sign-up {
+	padding-top: 10px;	
+}
+.button-login {
+	padding-bottom: 12px;
+	padding-top: 25px;
+}
+#loginForm label, #loginForm .ui-controlgroup-label {
+	float: left;
+	display: inline;
+}
+#loginForm .ui-input-text, #loginForm .ui-input-search {
+	float: right;
+	display: inline;
+	width: 60%;
+}
+.ui-mobile #loginForm label, #loginForm .ui-controlgroup-label {
+	margin: .3em 0 .3em;
+}
+#pre-login h1 {
+	font-size: 26px;
+	font-family: 'VAGRoundedLtRegular';
+}
+#pre-login h2 {
+	font-size: 16px;
+}
+.fieldcontain.first { margin-top: 0; }
+
+.ui-input-text, .ui-input-search {
+	border: 0;
+	margin: 0;
+}
+.ui-shadow-inset {
+	-webkit-box-shadow: 0 /*{global-box-shadow-size}*/ rgba(0,0,0,.2) /*{global-box-shadow-color}*/;
+	-moz-box-shadow: 0 /*{global-box-shadow-size}*/ rgba(0,0,0,.2) /*{global-box-shadow-color}*/;
+	box-shadow: 0 /*{global-box-shadow-size}*/ rgba(0,0,0,.2) /*{global-box-shadow-color}*/;
+}
+.ui-field-contain {
+	border: 0;
+}
+
+.ui-page-theme-a .ui-input-text input, 
+.ui-page-theme-a .ui-input-search input {
+	text-shadow: none;
+	background: #ddeef5;
+	padding: 12px;
+	-webkit-border-radius: 12px; 
+	-moz-border-radius: 12px; 
+	border-radius: 12px; 
+	
+}
+.ui-page-theme-a .col3 .ui-input-text {
+	width: 35%;
+}
+.ui-page-theme-a .col3 div:last-of-type {
+	float: right;
+}
+
+.ui-page-theme-a .ui-input-btn,
+.ui-page-theme-a .ui-btn:hover,
+html .ui-bar-a .ui-btn:hover,
+html .ui-body-a .ui-btn:hover,
+html body .ui-group-theme-a .ui-btn:hover,
+html head + body .ui-btn.ui-btn-a:hover,
+.ui-page-theme-a .ui-btn:active,
+html .ui-bar-a .ui-btn:active,
+html .ui-body-a .ui-btn:active,
+html body .ui-group-theme-a .ui-btn:active,
+html head + body .ui-btn.ui-btn-a:active,
+.ui-page-theme-a .ui-btn.ui-btn-active,
+html .ui-bar-a .ui-btn.ui-btn-active,
+html .ui-body-a .ui-btn.ui-btn-active,
+html body .ui-group-theme-a .ui-btn.ui-btn-active,
+html head + body .ui-btn.ui-btn-a.ui-btn-active,
+.ui-page-theme-a .ui-btn:visited,
+html .ui-bar-a .ui-btn:visited,
+html .ui-body-a .ui-btn:visited,
+html body .ui-group-theme-a .ui-btn:visited,
+html head + body .ui-btn.ui-btn-a:visited  {
+	background: #edf6f9 url('../img/bg-button.png') repeat-x;
+	border: 5px solid #fff;
+	padding: 2px 10px;
+	-webkit-border-radius: 12px; 
+	-moz-border-radius: 12px; 
+	border-radius: 12px; 
+	font-family: 'vag_roundedbold';
+	font-size: 24px;
+	color: #547eba;
+}
+.ui-page-theme-a .ui-input-btn input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	-webkit-border-radius: 12px; 
+	-moz-border-radius: 12px; 
+	border-radius: 12px; 
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	cursor: pointer;
+	background: rgba(255,255,255,0);
+	filter: Alpha(Opacity=1);
+	opacity: 1;
+	font-size: 1px;
+	text-indent: -9999px;
+	z-index: 2;
+}
+.hsp {
+	margin-right: 10px !important;
+}
+a.button,
+a.button:hover {
+	background: #edf6f9 url('../img/bg-button.png') repeat-x;
+	border: 5px solid #fff;
+	padding: 2px 6%;
+	-webkit-border-radius: 12px; 
+	-moz-border-radius: 12px; 
+	border-radius: 12px; 
+	font-family: 'vag_roundedbold';
+	font-size: 24px;
+	color: #547eba;
+	text-decoration: none;
+	margin: 10px 0;
+	display: inline-block;
+	filter: Alpha(Opacity=1);
+	opacity: 1;
 }
 
 .event {

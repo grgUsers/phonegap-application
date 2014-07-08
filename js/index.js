@@ -19,7 +19,8 @@ jQuery(document).ready(function(){
 		$("#loginForm #submitButton").click(function() { 
 			var u = $("#loginForm #username").val();
 			var p = $("#loginForm #password").val();
-			handleLogin(u,p); 
+			//handleLogin(u,p); 
+			localBypass();
 		});
 		
 		//menu popping
@@ -35,7 +36,9 @@ jQuery(document).ready(function(){
 		$('.header-guest').load('header-guest.html');
 		$('.footer-guest').load('footer-guest.html');
 	}
-	
+	function localBypass() {
+		$.mobile.changePage( "#toddler-details", { transition: "fade", changeHash: false });
+	}
 	function handleLogin(u, p) {
 		$.mobile.changePage( "#loading", { transition: "fade", changeHash: false });
 		var form = $("#loginForm");    
