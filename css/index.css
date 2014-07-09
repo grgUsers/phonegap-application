@@ -65,6 +65,7 @@ html .ui-bar-a .ui-btn:hover,
 html .ui-body-a .ui-btn:hover,
 html body .ui-group-theme-a .ui-btn:hover,
 html head + body .ui-btn.ui-btn-a:hover,
+html body .ui-group-theme-a .ui-btn.ui-radio-off:hover, 
 .ui-page-theme-a .ui-btn:active,
 html .ui-bar-a .ui-btn:active,
 html .ui-body-a .ui-btn:active,
@@ -85,6 +86,7 @@ html head + body .ui-btn.ui-btn-a:visited  {
 	background: none;
 	border: none;
 	text-shadow: none;
+	color: #fff;
 }
 
 
@@ -106,11 +108,33 @@ body.ui-overlay-a {
 }
  
 /* itf specific */
-.header-member,
+#member-page2,
+#member-page3,
+#member-page4,
+#member-page5 {
+	text-align: center;
+}
+.header-member > div,
 .ui-content,
 .footer-member {
 	padding: 0 10px;
 }
+.footer-member .left {
+	font-size: 15px;
+	color: #feda49;
+    font-family: 'vag_roundedbold';
+	width: 73%;
+}
+.footer-member .right {
+	max-width: 25%;
+}
+.header-member > div {
+	display: table;
+	position: relative;
+	width: 100%;
+	box-sizing: border-box;
+}
+
 .ui-page-theme-a {
 	color: #fff;
 }
@@ -122,18 +146,20 @@ body.ui-overlay-a {
 	margin-top: 44px;
 	margin-bottom: 15px;
 	text-align: center;
+	display: table;
+	width: 100%;
 }
 .header-member .col1,
+.header-member .col2,
+.header-member .col3 {
+	display: table-cell;
+}
 .header-member .col2 {
-	float: left;
-}
-
-.header-member .col3 {
-	float: right;
+	width: 70%
 }
 .header-member .col1,
 .header-member .col3 {
-	width: 42px;
+	width: 15%;
 }
 
 
@@ -149,7 +175,47 @@ body.ui-overlay-a {
 }
 /* */
 
-
+.ui-btn-icon-left:after {
+	left: 0.264em;
+}
+.ui-btn-icon-left {
+	padding-left:40px;
+}
+.left {
+	float: left;
+	clear: none;
+}
+.right {
+	float: right;
+	clear: none;
+}
+.ui-mobile .dob label {
+	margin: 10px 0 0 0;
+}
+.radioboxes .left,
+.radioboxes .right,
+.dob .left,
+.dob .right,
+.radioboxes .ui-radio,
+.radioboxes label {
+	width: 46%;
+}
+.ui-field-contain {
+	padding: 10px 0;
+}
+.radioboxes .ui-radio {
+	width: 35px;
+}
+.radioboxes .ui-radio input {
+	margin: -2px 0 0 0 !important;
+}
+.radioboxes label {
+	margin: 0;
+}
+.radioboxes .ui-radio,
+.radioboxes label {
+	float: left;
+}
 
 /* Portrait layout (default) */
 .app {
@@ -253,6 +319,9 @@ h2 {
 	-webkit-border-radius: 12px; 
 	-moz-border-radius: 12px; 
 	border-radius: 12px; 
+    font-family: 'vag_roundedbold';
+	font-size: 22px;
+	color: #547eba;
 	
 }
 .ui-page-theme-a .col3 .ui-input-text {
@@ -261,14 +330,14 @@ h2 {
 .ui-page-theme-a .col3 div:last-of-type {
 	float: right;
 }
-
+.radioboxes { margin-top: 10px; }
 .ui-page-theme-a .ui-input-btn,
-.ui-page-theme-a .ui-btn:hover,
-html .ui-bar-a .ui-btn:hover,
+.ui-page-theme-a .ui-input-btn:hover,
+/*html .ui-bar-a .ui-btn:hover,
 html .ui-body-a .ui-btn:hover,
 html body .ui-group-theme-a .ui-btn:hover,
 html head + body .ui-btn.ui-btn-a:hover,
-.ui-page-theme-a .ui-btn:active,
+.ui-page-theme-a .ui-btn:active,*/
 html .ui-bar-a .ui-btn:active,
 html .ui-body-a .ui-btn:active,
 html body .ui-group-theme-a .ui-btn:active,
@@ -314,6 +383,9 @@ html head + body .ui-btn.ui-btn-a:visited  {
 	font-size: 1px;
 	text-indent: -9999px;
 	z-index: 2;
+}
+.ui-checkbox input, .ui-radio input {
+	
 }
 .hsp {
 	margin-right: 10px !important;

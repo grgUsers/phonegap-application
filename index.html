@@ -78,33 +78,63 @@
             <div data-role="main" class="ui-content">
                 <h1>Toddler's details</h1>
                 
-                <div data-role="fieldcontain first" class="ui-field-contain">
+                <div data-role="fieldcontain" class="ui-field-contain">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" value="" />
+                    <input type="text" name="name" id="name" value="" placeholder="Enter first name" />
                     <div class="tidy"></div>
                 </div>
-                <div data-role="fieldcontain first" class="ui-field-contain col3">
+                
+                <div class="dob">
                     <label for="dob">D.O.B</label>
-                    <input type="text" name="month" id="month" value="" />
-                    <input type="text" name="year" id="year" value="" />
-                </div>
-                <div class="tidy"></div>
-                
-                <div data-role="fieldcontain first" class="ui-field-contain">
-                    <label for="gender">Gender</label>
-                    <input type="radio" name="male" id="male" value="Male" />
-                    <input type="radio" name="female" id="female" value="Female" />
+                    <div class="tidy"></div>
+                    <div data-role="fieldcontain" class="ui-field-contain left">
+                        <input type="text" name="month" id="month" value="" placeholder="Month" />
+                    </div>
+                    <div data-role="fieldcontain" class="ui-field-contain right">
+						<input type="text" name="year" id="year" value="" placeholder="Year" />
+                    </div>
                     <div class="tidy"></div>
                 </div>
                 
+                <div class="radioboxes">
+                    <label for="gender">Gender</label>
+                    <div class="tidy"></div>
+                    <div data-role="fieldcontain" class="ui-field-contain left">
+                        <input type="radio" name="gender" id="Gender-male" value="Male" />
+                        <label for="male">Male</label>
+                        <div class="tidy"></div>
+                    </div>
+                    <div data-role="fieldcontain" class="ui-field-contain right">
+						<input type="radio" name="gender" id="Gender-female" value="Female" />
+                        <label for="female">Female</label>
+                        <div class="tidy"></div>
+                    </div>
+					<div class="tidy"></div>
+                </div>
+                
+                <div class="radioboxes">
+                    <label for="vegetarian">Vegetarian?</label>
+                    <div class="tidy"></div>
+                    <div data-role="fieldcontain" class="ui-field-contain left">
+                        <input type="radio" name="vegetarian" id="Vegetarian-No" value="No" />
+                        <label for="male">No</label>
+                        <div class="tidy"></div>
+                    </div>
+                    <div data-role="fieldcontain" class="ui-field-contain right">
+						<input type="radio" name="vegetarian" id="Vegetarian-Yes" value="Yes" />
+                        <label for="female">Yes</label>
+                        <div class="tidy"></div>
+                    </div>
+					<div class="tidy"></div>
+                </div>
                 <p>
                 <a href="#" class="button right">Add another child</a>
                 <div class="tidy"></div>
                 </p>
                 
                 <p>
-                <a href="#" class="button left hsp">Cancel</a>
-                <a href="#" class="button right">Log in</a>
+                <a href="#login" class="button left hsp">Cancel</a>
+                <a href="#member-page2" class="button right">Continue</a>
                 <div class="tidy"></div>
                 </p>
                 
@@ -114,20 +144,27 @@
         <div class="page" data-role="page" id="member-page2">
 			<div data-role="header" class="header-member"></div>
             <div data-role="main" class="ui-content">
-                <h1>Member page 2</h1>
-                <a href="#member-page3">Next Page</a>
+                <img src="img/diary.png" >
+                
+                <p>
+                <a href="#toddler-details" class="button left hsp">Activity</a>
+                <a href="#member-page3" class="button right">Analysis</a>
+                <div class="tidy"></div>
+                </p>
             </div>
             <div data-role="footer" class="footer-member" ></div>
         </div>
-
+        
         <div class="page" data-role="page" id="member-page3">
-            <div data-role="header" class="header-member" ></div>
+			<div data-role="header" class="header-member"></div>
             <div data-role="main" class="ui-content">
-                <img src="img/diary.png" >
+                <img src="img/activity.png" >
                 
-                <div id="menuPop">
-                	<p>This is the menu</p>
-                </div>
+                <p>
+                <a href="#member-page2" class="button left hsp">Food</a>
+                <a href="#member-page4" class="button right">Analysis</a>
+                <div class="tidy"></div>
+                </p>
             </div>
             <div data-role="footer" class="footer-member" ></div>
         </div>
@@ -135,9 +172,13 @@
         <div class="page" data-role="page" id="member-page4">
             <div data-role="header" class="header-member" ></div>
             <div data-role="main" class="ui-content">
-                <h1>Member page 4</h1>
-                <a href="#member-page3">Previous Page</a>
-                <a href="#member-page2">Back to the start</a>
+                <img src="img/add-food.png" >
+                
+                <p>
+                <a href="#member-page3" class="button left hsp">Activity</a>
+                <a href="#member-page4" class="button right">Analysis</a>
+                <div class="tidy"></div>
+                </p>
             </div>
             <div data-role="footer" class="footer-member" ></div>
         </div>
