@@ -300,7 +300,7 @@ ul#menu {
 	/*background: #890958;*/
 	display: none;
 	position: absolute;
-	top: 40px;
+	top: 48px;
 	right: 0px;
 	width: 129px;
 	font-size: 15px !important;
@@ -440,7 +440,7 @@ h2 {
 	width: 60%;
 }
 .ui-mobile #loginForm label, #loginForm .ui-controlgroup-label {
-	margin: .3em 0 .3em;
+	margin: 12px 0;
 }
 #pre-login h1 {
 	font-size: 26px;
@@ -449,6 +449,7 @@ h2 {
 #pre-login h2 {
 	font-size: 16px;
 }
+
 .fieldcontain.first { margin-top: 0; }
 
 .ui-input-text, .ui-input-search {
