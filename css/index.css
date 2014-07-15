@@ -263,6 +263,126 @@ body.ui-overlay-a {
     margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
 }
+.noscale { max-width: inherit !important; }
+
+
+/* navigation mobile */
+#navigation-mobile {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	zoom: 1;
+	width: auto;
+	text-align: left;
+	height: 40px;
+	width: 40px;
+}
+/* The button on the top-right */
+#navigation-mobile .btn-navbar {
+	position: absolute;
+	top: 8px;
+	width: 40px;
+	height: 40px;
+	display: block;
+	background: url('../img/bg-nav-mobile.png') no-repeat 50% 50%;
+	cursor: pointer;
+}
+/* Using the touch scrolling on capable devices. */
+.overthrow-enabled .overthrow {
+	overflow: hidden;
+	-webkit-overflow-scrolling: touch;
+}
+/* The unordered list with the menu */
+ul#menu {
+	padding: 20px 0 10px 0;
+	margin: 0;
+	background: url('../img/bg-nav-mobile-body.png') no-repeat 100% 0;
+	/*background: #890958;*/
+	display: none;
+	position: absolute;
+	top: 40px;
+	right: 0px;
+	width: 129px;
+	font-size: 15px !important;
+	overflow-x: hidden;
+	z-index: 100;
+	width: 188px;
+}
+ul#menu > li {
+	display: block;
+	width: 100%;
+	text-align: center;
+	background: url('../img/bg-nav-mobile-li.png') repeat-x 50% 100%;
+}
+ul#menu li:last-child {
+	border: none;
+	background: none;
+}
+ul#menu li.hasChildren {
+	height: auto !important;
+}
+ul#menu li.hasChildren > a {
+	background: url('../img/menu-li-haschildren-a.png') no-repeat 100% 9px;
+}
+ul#menu li.hasChildren.open > a {
+	background: url('../img/menu-li-haschildren-open-a.png') no-repeat 100% 9px;
+}
+ul#menu li.hasChildren.open > a span {
+}
+ul#menu li.hasChildren ul {
+	display: none;
+	margin: 0 !important;
+	padding: 8px 0 15px 0 !important;
+}
+ul#menu li.hasChildren ul li {
+	background: none;
+}
+ul#menu li.hasChildren ul li a {
+	font-size: 13px;
+	color: #fff;
+	display: block;
+	text-decoration: none;
+	padding: 4px 10px 4px 10px;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+ul#menu li a {
+	font-family: 'vag_roundedbold';
+	font-size: 18px;
+	color: #547eba;
+	display: block;
+	text-decoration: none;
+	padding: 8px 10px 6px 10px;
+	font-weight: normal;
+	text-transform: normal;
+}
+ul#menu li a span {
+	display: block;
+}
+ul#menu li a:link,
+ul#menu li a:visited {
+
+	text-decoration: none;
+	outline: none;
+}
+ul#menu li a:hover,
+ul#menu li a:active {
+	/*  color: #a67b45;
+	text-decoration: none;
+	outline: none;
+	background: rgba(0, 0, 0, 0.05);*/
+}
+ul#menu li.hasChildren a > span {
+	background-position: right -97px !important;
+	background-repeat: no-repeat;
+}
+ul#menu li.hasChildren a:hover > span,
+ul#menu li.hasChildren.hover > a span {
+	/* background-position: right -138px !important;*/
+}
+/* */
+
+
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {

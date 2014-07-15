@@ -1,13 +1,15 @@
 /* testing device 
 document.addEventListener("deviceready", deviceReady, true); */
 /* testing locally */
+
 jQuery(document).ready(function(){
 	deviceReady();
-	
+/* testing locally */
+
 	$('.diary img').each(function(i){
 		$(this).delay(500*i).fadeTo(500,1);
 	});
-/* testing locally */
+	
 	
 	function deviceReady() {  
 		if(localStorage.getItem('username') && localStorage.getItem('password')) {
@@ -85,6 +87,19 @@ jQuery(document).ready(function(){
 		}
 		return false;
 	}
+	
+	
+	
 /* testing locally */
 });
 /* testing locally */
+
+
+jQuery(window).resize(function() {
+	
+	/* mobile nav 
+	var width = $(window).width();
+	$('ul#menu').width(width-20); // 20 for left margin
+	mobile nav */
+
+});
