@@ -3,6 +3,10 @@ document.addEventListener("deviceready", deviceReady, true); */
 /* testing locally */
 jQuery(document).ready(function(){
 	deviceReady();
+	
+	$('.diary img').each(function(i){
+		$(this).delay(500*i).fadeTo(500,1);
+	});
 /* testing locally */
 	
 	function deviceReady() {  

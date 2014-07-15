@@ -17,6 +17,7 @@
  			function submitForm(v) {
 				document.getElementById(v).submit();
 			} 
+
         </script>
     </head>
     <body>
@@ -25,11 +26,11 @@
             <div data-role="main" class="ui-content">
             	<center><a href="#member-page2"><img src="img/img-page1.png" class="image-welcome"/></a>
 				<h1>Your toddler's diet calculator</h1>
-                <p>
+                <div class="button-container">
                 <a href="#login" class="button left hsp">Cancel</a>
                 <a href="#login" class="button right">Log in</a>
                 <div class="tidy"></div>
-                </p>
+                </div>
                 <h2>Helping you give your toddler the good balance of foods to help them lead a healthy life.</h2>
                 </center>
             </div>
@@ -44,17 +45,21 @@
                 
                 <div data-role="fieldcontain first" class="ui-field-contain">
                     <label for="username">Email</label>
-                    <input type="text" name="username" id="username" value="" />
+                    <input type="text" name="username" id="username" value="" placeholder="Enter Email"/>
                     <div class="tidy"></div>
                 </div>
                 
                 <div data-role="fieldcontain" class="ui-field-contain">
                     <label for="password">Password</label>
-                    <input type="password" name="password" id="password" value=""  />
+                    <input type="password" name="password" id="password" value="" placeholder="Enter Password" />
                     <div class="tidy"></div>
                     
                 </div>
-					<input type="submit" value="Login" id="submitButton" onClick="javascript:return false;">
+ 				<div class="button-container">
+					<a href="#pre-login" class="button left hsp">Cancel</a>
+					<input type="submit" value="Login" id="submitButton" class="right" onClick="javascript:return false;">
+					<div class="tidy"></div>
+				</div>
                 </form>
             </div>
 			<div data-role="header" data-id="footer-guest"></div>
@@ -144,7 +149,15 @@
         <div class="page" data-role="page" id="member-page2">
 			<div data-role="header" class="header-member"></div>
             <div data-role="main" class="ui-content">
-                <img src="img/diary.png" >
+            
+            	<div class="diary">
+                	<img src="img/diary-r1.png" class="item" />
+                	<img src="img/diary-r2.png" class="item" />
+                	<img src="img/diary-r3.png" class="item" />
+                	<img src="img/diary-r4.png" class="item" />
+                	<img src="img/diary-r5.png" class="item" />
+                </div>
+
                 
                 <p>
                 <a href="#toddler-details" class="button left hsp">Activity</a>
