@@ -193,6 +193,7 @@ body.ui-overlay-a {
 .header-member .col1,
 .header-member .col3 {
 	width: 15%;
+	position: relative;
 }
 
 
@@ -264,25 +265,29 @@ body.ui-overlay-a {
                                    /* offset horizontal: half of text area width */
 }
 .noscale { max-width: inherit !important; }
-
+#backBtn { 
+	position: absolute;
+	top: 0;
+	left: 0;
+}
 
 /* navigation mobile */
 #navigation-mobile {
 	position: absolute;
-	bottom: 10px;
-	right: 10px;
+	top: 0;
+	right: -1px;
 	zoom: 1;
 	width: auto;
 	text-align: left;
-	height: 40px;
-	width: 40px;
+	height: 42px;
+	width: 43px;
 }
 /* The button on the top-right */
 #navigation-mobile .btn-navbar {
 	position: absolute;
-	top: 8px;
-	width: 40px;
-	height: 40px;
+	top: 0;
+	width: 43px;
+	height: 42px;
 	display: block;
 	background: url('../img/bg-nav-mobile.png') no-repeat 50% 50%;
 	cursor: pointer;
@@ -300,8 +305,8 @@ ul#menu {
 	/*background: #890958;*/
 	display: none;
 	position: absolute;
-	top: 48px;
-	right: 0px;
+	top: 41px;
+	right: 1px;
 	width: 129px;
 	font-size: 15px !important;
 	overflow-x: hidden;

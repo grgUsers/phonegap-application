@@ -6,9 +6,11 @@ jQuery(document).ready(function(){
 	deviceReady();
 /* testing locally */
 
-	$('.diary img').each(function(i){
-		$(this).delay(500*i).fadeTo(500,1);
-	});
+	window.onload = function() {
+		$('.diary img').each(function(i){
+			$(this).delay(500*i).fadeTo(500,1);
+		});
+	}
 	
 	
 	function deviceReady() {  
