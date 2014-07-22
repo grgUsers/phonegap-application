@@ -139,6 +139,20 @@ body.ui-overlay-a {
 }
 
 /* */
+
+/* add foods */
+.add-foods {
+	max-width: 389px;
+	margin: 0 auto;
+	line-height: 1px;
+}
+.add-foods img {
+	margin-bottom: 4px;
+}
+.add-foods img.show-foods {
+
+}
+/* */
  
 /* itf specific */
 #member-page2,
