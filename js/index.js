@@ -60,7 +60,7 @@ $(function(){
 			});
 	
 			$( ".food-category" ).click(function() {
-				$(this).next('.food-items').toggle(1000, function() {
+				$(this).next('.food-items').toggle(500, function() {
 				// Animation complete.
 				});
 			});
